@@ -1,6 +1,6 @@
 "Hello World!" 
 
-#!/usr/bin/python
+#!/Python26/python
 print('Content-Type','text/html')
 
 credits={1:23,2:47,3:68,4:93,5:116,6:139,7:163}

@@ -1,6 +1,12 @@
 body
 {
   color : white;
-  background : linear-gradient(to right top,#65dfc9,#6cdbeb);
+  text-align: center;
+  background : black;
   min-height : 100vh;
+}
+
+ul
+{ 
+  list-style-type : square;
 }

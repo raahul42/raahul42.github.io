@@ -4,6 +4,7 @@ body
   text-align: center;
   background : black;
   min-height : 100vh;
+  padding : 10px;
 }
 
 ul

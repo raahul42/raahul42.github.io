@@ -163,10 +163,11 @@ h3{
 /*--- projects ---*/
 
 .projects{
-	width: 80%;
+	width: 80%; /*80%*/
 	margin: auto;
 	text-align: center;
-	padding-top: 50px	
+	padding-top: 50px;
+
 }
 
 .projects-col{
@@ -202,7 +203,7 @@ h3{
 	transform: translateX(-50%);
 	position: absolute;
 	opacity: 0;
-	transition
+	transition : 0.5s;
 }
 .layer:hover h3{
 	bottom: 49%;
@@ -227,6 +228,6 @@ h3{
 	cursor: pointer;
 	padding: 18px 0;
 }
-.fa-heart-o{
+.fa-heart{
 	color: #f44336;
 }

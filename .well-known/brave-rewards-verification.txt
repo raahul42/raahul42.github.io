@@ -1,1 +1,4 @@
+This is a Brave Rewards publisher verification file.
 
+Domain: raahul42.github.io
+Token: 9033c2654bedc24dbc8b3c995c528199f9d49a8f3b5efc614d30fcbd6c5827cf

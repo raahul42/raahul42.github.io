@@ -219,6 +219,7 @@ nav .fa {
     overflow: hidden;
     cursor: pointer;
     border: 1px solid var(--card-border);
+    height: 320px; /* NEW: Forces all project cards to be exactly the same height */
 }
 
 .project-card img {
@@ -327,4 +328,24 @@ nav .fa {
 
 .fa-heart {
     color: #ef4444;
+}
+
+/* --- Desktop Specific Tweaks --- */
+@media(min-width: 701px) {
+    /* Tighten up the hero text so it doesn't overlap or look spaced out */
+    .text-box h1 {
+        line-height: 1.1;
+    }
+    
+    /* Lock the About section to exactly 3 columns */
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Keep the 2 Project cards from stretching too wide across the screen */
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px; /* Constrains the width for a sleeker look */
+        margin: 0 auto;
+    }
 }

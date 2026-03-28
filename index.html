@@ -22,15 +22,35 @@
 
 <!-- Navigation -->
 <nav id="navbar">
-    <h2 class="nav-logo">Raahul<span class="dot">.</span></h2>
+    <h2 class="nav-logo" data-tooltip="No one made a wikipedia page yet!">Raahul Nallasamy</h2>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
     <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
     <div class="nav-links" id="navLinks">
         <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
         <ul>
             <li><a href="#home" class="nav-item">Home</a></li>
             <li><a href="#about" class="nav-item">About</a></li>
-            <li><a href="https://www.youtube.com/c/raahul42" target="_blank" class="nav-item">YouTube</a></li>
-            <li><a href="https://github.com/raahul42" target="_blank" class="nav-item">GitHub</a></li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Building <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://github.com/raahul42/tree-tracker" target="_blank">
+                        <i class="fa-solid fa-seedling"></i> tree-tracker
+                    </a>
+                    <a href="https://www.youtube.com/c/raahul42" target="_blank">
+                        <i class="fa-brands fa-youtube"></i> YouTube Community
+                    </a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Substack <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://raahul5842.substack.com" target="_blank">
+                        <i class="fa-solid fa-pen-nib"></i> ...writing
+                    </a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
@@ -44,7 +64,7 @@
     </div>
 
     <div class="text-box">
-        <h1>Hi, I'm <span class="gradient-text">Raahul.</span></h1>
+        <h1><span class="gradient-text">Raahul.</span></h1>
         <h2 class="typed-line">I'm <span id="typed-text"></span><span class="cursor">|</span></h2>
         <p>Chemical engineer turned data scientist. Currently at the intersection of<br>
         machine learning, analytics, and figuring things out.</p>
@@ -54,9 +74,7 @@
     </div>
 
     <!-- Fun Easter egg -->
-    <button class="vadi-btn" id="vadiBtn" onclick="toggleVadi()">
-        🎭 Vadi Mode
-    </button>
+    <button class="vadi-btn" id="vadiBtn" onclick="toggleVadi()" title="???">🎭</button>
 
     <!-- Scroll indicator -->
     <div class="scroll-down">
@@ -104,11 +122,20 @@
         </div>
         <div class="journey-line"></div>
         <div class="journey-node">
-            <div class="node-marker active"></div>
+            <div class="node-marker"></div>
             <div class="node-content">
                 <span class="node-year">2022 – 24</span>
                 <h3>IIM Calcutta</h3>
-                <p>PGDBA — Business Analytics<br><span class="node-sub">with ISI Kolkata &amp; IIT Kharagpur</span></p>
+                <p>Business Analytics<br><span class="node-sub">with ISI &amp; IITKgp</span></p>
+            </div>
+        </div>
+        <div class="journey-line"></div>
+        <div class="journey-node">
+            <div class="node-marker active"></div>
+            <div class="node-content">
+                <span class="node-year">2024 – present</span>
+                <h3>Data Scientist</h3>
+                <p>——</p>
             </div>
         </div>
     </div>
@@ -119,10 +146,17 @@
     <div class="currently reveal">
         <h2 class="section-title">What I'm Building</h2>
         <p class="story-text center">
-            Right now I'm deep in two problems that I find genuinely interesting:
-            teaching machines to spot patterns in messy text data, and exploring how
-            graph structures can make recommendation systems smarter. Both are hard.
-            Both are fun.
+            Professionally, I work on fraud prevention in financial networks —
+            building models that catch bad actors in card transaction data before
+            they do real damage. It's one of those problems where the stakes are
+            high enough that getting it right actually matters.
+        </p>
+        <p class="story-text center">
+            Outside of work, I build things I care about — whether that's creating
+            educational content to make technical ideas more accessible, or working
+            on tools that contribute in some small way to a healthier environment.
+            No grand plan, just a belief that the things you choose to spend time
+            on should mean something.
         </p>
     </div>
 
@@ -146,12 +180,11 @@
 <footer class="footer">
     <p>Inspired by dank memes &amp; big dreams</p>
     <div class="icons">
-        <a href="https://twitter.com/raahul42" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-        <a href="https://instagram.com/raahul.42" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/raahul42" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/raahul42" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <span class="icon-btn" data-tooltip="no funny tweets"><i class="fa-brands fa-twitter"></i></span>
+        <span class="icon-btn" data-tooltip="inactive since 2021"><i class="fa-brands fa-instagram"></i></span>
+        <a href="https://linkedin.com/in/raahul42" target="_blank" class="icon-btn" data-tooltip="might accept invite"><i class="fa-brands fa-linkedin"></i></span></a>
     </div>
-    <p>Made with <i class="fa-solid fa-heart"></i> by myself &copy; <span id="year"></span></p>
+    <p>Made with <i class="fa-solid fa-heart"></i> by myself <span class="claude-credit">&amp; claude</span> &copy; <span id="year"></span></p>
 </footer>
 
 <script>
@@ -175,7 +208,7 @@
     });
 
     // Typewriter Effect
-    const roles = ["a Developer.", "a Data Scientist.", "an ML Engineer.", "a Builder."];
+    const roles = ["a Developer.", "a Data Scientist.", "a Builder.", "a Meme Hoarder.", "an Occasional Reader.", "a Code Stealer.", "the Imposter. ඞ"];
     let roleIndex = 0, charIndex = 0, isDeleting = false;
     const typedEl = document.getElementById('typed-text');
 
@@ -207,12 +240,10 @@
         if (vadiMode) {
             header.classList.add('vadi-active');
             meshBg.style.display = "none";
-            btn.textContent = "✨ Normal Mode";
             btn.classList.add('active');
         } else {
             header.classList.remove('vadi-active');
             meshBg.style.display = "block";
-            btn.textContent = "🎭 Vadi Mode";
             btn.classList.remove('active');
         }
     }
@@ -242,6 +273,21 @@
         });
     }, { threshold: 0.4 });
     sections.forEach(s => sectionObs.observe(s));
+
+    // Theme toggle
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') applyTheme('light');
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.getElementById('themeIcon').className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        localStorage.setItem('theme', theme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
 
     // Dynamic copyright year
     document.getElementById('year').textContent = new Date().getFullYear();

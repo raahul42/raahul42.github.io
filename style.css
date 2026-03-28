@@ -677,6 +677,145 @@ section {
 }
 
 /* ===========================
+   STORY & JOURNEY
+=========================== */
+.story-intro {
+    max-width: 680px;
+    margin: 0 auto 72px;
+    text-align: center;
+}
+
+.story-text {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 20px;
+}
+
+.story-text.center {
+    text-align: center;
+}
+
+/* Journey Timeline */
+.journey {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    margin: 0 auto 72px;
+    max-width: 860px;
+}
+
+.journey-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+.node-marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    border: 2px solid var(--card-border);
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.node-marker.active {
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.journey-node:hover .node-marker {
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.journey-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--card-border), var(--card-border));
+    margin-top: 6px;
+    min-width: 40px;
+}
+
+.node-content {
+    padding: 0 12px;
+}
+
+.node-year {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.node-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+}
+
+.node-content p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.node-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.currently {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Mobile journey: vertical */
+@media (max-width: 700px) {
+    .journey {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .journey-line {
+        width: 2px;
+        height: 36px;
+        min-width: unset;
+        margin: 0;
+        background: var(--card-border);
+    }
+
+    .journey-node {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .node-marker {
+        margin-bottom: 0;
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+}
+
+/* ===========================
    VIDEO SECTION
 =========================== */
 .video-section {

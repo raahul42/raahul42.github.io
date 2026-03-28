@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
     <meta name="description" content="Raahul Nallasamy — Data Scientist & ML Engineer"/>
 
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body class="loading">
@@ -30,10 +29,8 @@
         <ul>
             <li><a href="#home" class="nav-item">Home</a></li>
             <li><a href="#about" class="nav-item">About</a></li>
-            <li><a href="#projects" class="nav-item">Projects</a></li>
             <li><a href="https://www.youtube.com/c/raahul42" target="_blank" class="nav-item">YouTube</a></li>
             <li><a href="https://github.com/raahul42" target="_blank" class="nav-item">GitHub</a></li>
-            <li><a href="https://raahul42.medium.com" target="_blank" class="nav-item">Medium</a></li>
         </ul>
     </div>
 </nav>
@@ -47,16 +44,12 @@
     </div>
 
     <div class="text-box">
-        <div class="hero-tag">
-            <span class="status-dot"></span> Available for opportunities
-        </div>
         <h1>Hi, I'm <span class="gradient-text">Raahul.</span></h1>
         <h2 class="typed-line">I'm <span id="typed-text"></span><span class="cursor">|</span></h2>
-        <p>Currently studying Business Analytics from IIMC, ISI Kolkata &amp; IIT Kharagpur.<br>
-        Exploring data, building projects, and solving problems.</p>
+        <p>Chemical engineer turned data scientist. Currently at the intersection of<br>
+        machine learning, analytics, and figuring things out.</p>
         <div class="hero-btns">
             <a href="mailto:raahul42@proton.me" class="btn btn-primary">Get In Touch</a>
-            <a href="#projects" class="btn btn-secondary">View Work</a>
         </div>
     </div>
 
@@ -71,86 +64,68 @@
     </div>
 </section>
 
-<!-- About Section -->
+<!-- About / Story Section -->
 <section class="about" id="about">
-    <h2 class="section-title reveal">About Me</h2>
-    <div class="bento-grid">
-        <div class="bento-card reveal">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-            <ul>
-                <li><strong>PGDBA</strong> — IIM Calcutta, ISI Kolkata, IIT Kharagpur <span class="year-tag">2022–24</span></li>
-                <li><strong>Chemical Engineering</strong> — NIT Trichy <span class="year-tag">2017–21</span></li>
-            </ul>
+
+    <div class="story-intro reveal">
+        <h2 class="section-title">My Story</h2>
+        <p class="story-text">
+            I started out studying Chemical Engineering at NIT Trichy — loved the systems
+            thinking, less so the lab reports. After graduating I joined Capgemini as a
+            Senior Analyst, which taught me how tech actually works inside large organisations
+            (spoiler: a lot of Excel).
+        </p>
+        <p class="story-text">
+            That curiosity about data eventually pulled me toward a PGDBA from IIM Calcutta,
+            ISI Kolkata &amp; IIT Kharagpur — a programme that sits right at the edge of
+            statistics, computing, and business. These days I build things: NLP pipelines,
+            graph-based recommender systems, the occasional YouTube video.
+        </p>
+    </div>
+
+    <!-- Journey Timeline -->
+    <div class="journey reveal">
+        <div class="journey-node">
+            <div class="node-marker"></div>
+            <div class="node-content">
+                <span class="node-year">2017 – 21</span>
+                <h3>NIT Trichy</h3>
+                <p>B.Tech, Chemical Engineering</p>
+            </div>
         </div>
-        <div class="bento-card reveal">
-            <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
-            <ul>
-                <li><strong>Capgemini</strong> — Senior Analyst <span class="year-tag">2021–22</span></li>
-            </ul>
+        <div class="journey-line"></div>
+        <div class="journey-node">
+            <div class="node-marker"></div>
+            <div class="node-content">
+                <span class="node-year">2021 – 22</span>
+                <h3>Capgemini</h3>
+                <p>Senior Analyst</p>
+            </div>
         </div>
-        <div class="bento-card reveal">
-            <h3><i class="fa-solid fa-code"></i> Current Focus</h3>
-            <ul>
-                <li>Email spam classification &amp; NLP clustering</li>
-                <li>Graph-based Recommender Systems</li>
-            </ul>
+        <div class="journey-line"></div>
+        <div class="journey-node">
+            <div class="node-marker active"></div>
+            <div class="node-content">
+                <span class="node-year">2022 – 24</span>
+                <h3>IIM Calcutta</h3>
+                <p>PGDBA — Business Analytics<br><span class="node-sub">with ISI Kolkata &amp; IIT Kharagpur</span></p>
+            </div>
         </div>
     </div>
 
     <div class="section-divider"></div>
 
-    <h2 class="section-title reveal">Tech Stack</h2>
-    <div class="skills-grid reveal">
-        <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-        <div class="skill-item"><i class="devicon-tensorflow-original colored"></i><span>TensorFlow</span></div>
-        <div class="skill-item"><i class="devicon-pytorch-original colored"></i><span>PyTorch</span></div>
-        <div class="skill-item"><i class="devicon-scikitlearn-plain colored"></i><span>Scikit-learn</span></div>
-        <div class="skill-item"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
-        <div class="skill-item"><i class="devicon-numpy-plain colored"></i><span>NumPy</span></div>
-        <div class="skill-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
-        <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>SQL</span></div>
-        <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-        <div class="skill-item"><i class="devicon-jupyter-plain colored"></i><span>Jupyter</span></div>
-        <div class="skill-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
-        <div class="skill-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+    <!-- Currently -->
+    <div class="currently reveal">
+        <h2 class="section-title">What I'm Building</h2>
+        <p class="story-text center">
+            Right now I'm deep in two problems that I find genuinely interesting:
+            teaching machines to spot patterns in messy text data, and exploring how
+            graph structures can make recommendation systems smarter. Both are hard.
+            Both are fun.
+        </p>
     </div>
-</section>
 
-<!-- Projects Section -->
-<section class="projects" id="projects">
-    <h2 class="section-title reveal">Selected Works</h2>
-    <div class="project-grid">
-        <div class="project-card reveal">
-            <img src="images/tictactoe.jpg" alt="Tic-Tac-Toe">
-            <div class="layer">
-                <div class="layer-content">
-                    <h3>Tic-Tac-Toe</h3>
-                    <p>An unbeatable AI player built with the Min-Max algorithm — play it and lose.</p>
-                    <div class="tech-badges">
-                        <span class="badge">Java</span>
-                        <span class="badge">Min-Max</span>
-                        <span class="badge">AI</span>
-                    </div>
-                    <a href="https://github.com/raahul42" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="project-card reveal">
-            <img src="images/hand.png" alt="Hand Shape Generation">
-            <div class="layer">
-                <div class="layer-content">
-                    <h3>Hand Shape Gen</h3>
-                    <p>Generating realistic hand geometries using Active Shape Models and statistical shape modelling.</p>
-                    <div class="tech-badges">
-                        <span class="badge">Python</span>
-                        <span class="badge">ASM</span>
-                        <span class="badge">Computer Vision</span>
-                    </div>
-                    <a href="https://github.com/raahul42" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- YouTube Section -->
@@ -164,15 +139,6 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
         </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="cta-inner reveal">
-        <h2>Let's Work Together</h2>
-        <p>Open to roles in Data Science, ML Engineering, and Analytics.<br>Let's build something impactful.</p>
-        <a href="mailto:raahul42@proton.me" class="btn btn-primary">Say Hello <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 </section>
 
@@ -250,13 +216,6 @@
             btn.classList.remove('active');
         }
     }
-
-    // Stagger delays for card groups
-    document.querySelectorAll('.bento-grid, .project-grid, .skills-grid').forEach(grid => {
-        Array.from(grid.children).forEach((child, i) => {
-            child.style.setProperty('--reveal-delay', `${i * 0.1}s`);
-        });
-    });
 
     // Scroll Reveal
     const revealEls = document.querySelectorAll('.reveal');

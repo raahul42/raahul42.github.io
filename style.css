@@ -1435,17 +1435,26 @@ a.icon-btn {
         font-size: 22px;
     }
 
-    /* Mobile dropdown — always expanded, indented */
+    /* Mobile dropdown — collapsed by default, toggle on click */
     .nav-dropdown .dropdown-menu {
         position: static;
         transform: none;
-        opacity: 1;
+        opacity: 0;
         visibility: visible;
+        max-height: 0;
+        overflow: hidden;
         background: transparent;
         border: none;
         backdrop-filter: none;
-        padding: 4px 0 4px 20px;
+        padding: 0 0 0 20px;
         min-width: unset;
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        opacity: 1;
+        max-height: 200px;
+        padding: 6px 0 6px 20px;
     }
 
     .nav-dropdown:hover .dropdown-menu {
@@ -1459,7 +1468,13 @@ a.icon-btn {
     }
 
     .dropdown-trigger .fa-chevron-down {
-        display: none;
+        display: inline-block;
+        opacity: 0.5;
+    }
+
+    .nav-dropdown.open .fa-chevron-down {
+        transform: rotate(180deg);
+        opacity: 1;
     }
 }
 

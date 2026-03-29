@@ -55,6 +55,10 @@
             max-width: 1000px;
             margin: 0 auto;
         }
+        .tool-card-wrap {
+            position: relative;
+            height: 170px;
+        }
         .tool-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -64,12 +68,16 @@
             text-decoration: none;
             color: var(--text);
             display: block;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            z-index: 1;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .tool-card:hover {
             transform: translateY(-6px);
             border-color: var(--card-border-hover);
             box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+            z-index: 10;
         }
         .tool-icon {
             font-size: 30px;
@@ -192,7 +200,7 @@
         <div class="orb orb-3"></div>
     </div>
     <h1 style="position:relative;z-index:1;"><span class="gradient-text">Privacy</span> Stack.</h1>
-    <p style="position:relative;z-index:1;max-width:620px;">Certified privacy nerd (self-appointed). These are the tools I've actually settled on — shared here because everyone deserves to know this exists.</p>
+    <p style="position:relative;z-index:1;max-width:620px;">Certified privacy nerd (self-appointed). These are the tools I've actually settled on — sharing these here because everyone deserves to know that these exist.</p>
     <p class="privacy-note" style="position:relative;z-index:1;max-width:620px;">no one is paying me for this (sadly). this is just what works for me.</p>
 </div>
 
@@ -201,58 +209,70 @@
     <div class="tools-grid">
 
         <!-- Brave -->
-        <a href="https://brave.com" target="_blank" class="tool-card reveal">
+        <div class="tool-card-wrap reveal">
+        <a href="https://brave.com" target="_blank" class="tool-card">
             <i class="tool-icon fa-solid fa-shield-halved" style="color: #FB542B;"></i>
             <span class="tool-category">Browser</span>
             <h3 class="tool-name">Brave</h3>
             <p class="tool-desc">Chromium-based browser with built-in shields. Blocks ads, trackers, and fingerprinting out of the box — no extensions needed. All your Chrome extensions still work.</p>
             <span class="tool-link">brave.com <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
+        </div>
 
         <!-- Proton Pass -->
-        <a href="https://proton.me/pass" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.1s">
+        <div class="tool-card-wrap reveal" style="--reveal-delay: 0.1s">
+        <a href="https://proton.me/pass" target="_blank" class="tool-card">
             <i class="tool-icon fa-solid fa-key" style="color: #6D4AFF;"></i>
             <span class="tool-category">Password Manager</span>
             <h3 class="tool-name">Proton Pass</h3>
             <p class="tool-desc">Open-source password manager from the Proton team — the same people behind ProtonMail. End-to-end encrypted, zero-knowledge, built in Switzerland under strong privacy laws.</p>
             <span class="tool-link">proton.me/pass <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
+        </div>
 
         <!-- Proton Authenticator -->
-        <a href="https://proton.me/pass/authenticator" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.2s">
+        <div class="tool-card-wrap reveal" style="--reveal-delay: 0.2s">
+        <a href="https://proton.me/pass/authenticator" target="_blank" class="tool-card">
             <i class="tool-icon fa-solid fa-mobile-screen-button" style="color: #22c55e;"></i>
             <span class="tool-category">Two-Factor Auth</span>
             <h3 class="tool-name">Proton Authenticator</h3>
             <p class="tool-desc">Open-source TOTP app with end-to-end encrypted backups. Unlike Google Authenticator, you won't lose all your 2FA codes if you lose your phone. Also use Google Authenticator where needed.</p>
             <span class="tool-link">proton.me/pass/authenticator <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
+        </div>
 
         <!-- Quad9 -->
-        <a href="https://quad9.net" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.05s">
+        <div class="tool-card-wrap reveal" style="--reveal-delay: 0.05s">
+        <a href="https://quad9.net" target="_blank" class="tool-card">
             <i class="tool-icon fa-solid fa-circle-nodes" style="color: #38bdf8;"></i>
             <span class="tool-category">DNS</span>
             <h3 class="tool-name">Quad9</h3>
             <p class="tool-desc">Free, privacy-focused DNS resolver (9.9.9.9) that blocks malicious domains at the DNS layer. Doesn't log your queries. Run by a Swiss non-profit — no commercial interest in your data.</p>
             <span class="tool-link">quad9.net <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
+        </div>
 
         <!-- Pi-hole -->
-        <a href="https://pi-hole.net" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.15s">
+        <div class="tool-card-wrap reveal" style="--reveal-delay: 0.15s">
+        <a href="https://pi-hole.net" target="_blank" class="tool-card">
             <i class="tool-icon fa-solid fa-network-wired" style="color: #ef4444;"></i>
             <span class="tool-category">Network</span>
             <h3 class="tool-name">Pi-hole</h3>
             <p class="tool-desc">A DNS sinkhole running on a Raspberry Pi Zero W that blocks ads and trackers for every device on the home network. Your TV, phone, laptop — all covered without installing anything on them.</p>
             <span class="tool-link">pi-hole.net <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
+        </div>
 
         <!-- Mobile -->
-        <a href="https://spreadprivacy.com/introducing-app-tracking-protection/" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.25s">
+        <div class="tool-card-wrap reveal" style="--reveal-delay: 0.25s">
+        <a href="https://spreadprivacy.com/introducing-app-tracking-protection/" target="_blank" class="tool-card">
             <i class="tool-icon fa-solid fa-mobile" style="color: #8b5cf6;"></i>
             <span class="tool-category">Mobile</span>
             <h3 class="tool-name">Phone Privacy</h3>
             <p class="tool-desc">On iPhone 14 — App Tracking Transparency on, location set to "never" for most apps, ad personalisation off. On Android — DuckDuckGo's VPN blocks app-level trackers across every app on the device.</p>
             <span class="tool-link">DDG App Tracking Protection <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
+        </div>
 
     </div>
 </section>

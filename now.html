@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Now — Raahul Nallasamy</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <meta name="description" content="What Raahul is focused on right now."/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <style>
+        .now-wrap {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 140px 24px 120px;
+        }
+
+        .now-header {
+            margin-bottom: 64px;
+        }
+
+        .now-header h1 {
+            font-size: clamp(52px, 8vw, 80px);
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .now-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .now-meta-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .now-section {
+            padding: 40px 0;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .now-section:last-of-type {
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .now-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .now-item {
+            margin-bottom: 28px;
+        }
+
+        .now-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .now-item-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .now-item-title em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .now-item-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .now-item-note {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .now-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .now-tag {
+            font-size: 13px;
+            color: var(--text-muted);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 5px 13px;
+            border-radius: 20px;
+            line-height: 1;
+        }
+
+        .now-footer-note {
+            margin-top: 48px;
+            font-size: 12px;
+            color: var(--text-muted);
+            opacity: 0.45;
+        }
+
+        .now-footer-note a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    </style>
+</head>
+<body class="loading">
+
+<div class="page-loader" id="loader">
+    <div class="loader-spinner"></div>
+</div>
+
+<nav id="navbar">
+    <h2 class="nav-logo" data-tooltip="no one made a wikipedia page yet">
+        <a href="index.html" style="color: inherit; text-decoration: none;">Raahul Nallasamy</a>
+    </h2>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+    <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
+    <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
+        <ul>
+            <li><a href="index.html#home" class="nav-item">Home</a></li>
+            <li><a href="index.html#about" class="nav-item">About</a></li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Building <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://github.com/raahul42/tree-tracker" target="_blank"><i class="fa-solid fa-seedling"></i> tree-tracker</a>
+                    <a href="https://www.youtube.com/c/raahul42" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube Community</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Substack <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://raahul5842.substack.com" target="_blank"><i class="fa-solid fa-pen-nib"></i> ...writing</a>
+                </div>
+            </li>
+            <li><a href="privacy.html" class="nav-item">Privacy</a></li>
+            <li><a href="now.html" class="nav-item active">Now</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="now-wrap">
+
+    <header class="now-header">
+        <h1><span class="gradient-text">now.</span></h1>
+        <div class="now-meta">
+            <span class="now-meta-dot"></span>
+            <span>last updated March 2026</span>
+        </div>
+    </header>
+
+    <!-- Reading -->
+    <div class="now-section">
+        <span class="now-label">Reading</span>
+        <div class="now-item">
+            <div class="now-item-title"><em>Doctor vs Saint</em></div>
+            <div class="now-item-sub">Arundhati Roy</div>
+            <div class="now-item-note">introduction to Ambedkar's Annihilation of Caste. eye opener for naive gandhians</div>
+        </div>
+    </div>
+
+    <!-- Watching -->
+    <div class="now-section">
+        <span class="now-label">Watching</span>
+        <div class="now-item">
+            <div class="now-item-title">The Pitt</div>
+            <div class="now-item-note">bp 140/90, sats 100%, difficulty in breathing</div>
+        </div>
+    </div>
+
+    <!-- Shooting -->
+    <div class="now-section">
+        <span class="now-label">Shooting</span>
+        <div class="now-item">
+            <div class="now-item-title">Living Expenses in Gurgaon</div>
+            <div class="now-item-sub">YouTube</div>
+            <div class="now-item-note">sharing the monthly expenses of a privileged corporate slave</div>
+        </div>
+    </div>
+
+    <!-- Fascinated by -->
+    <div class="now-section">
+        <span class="now-label">Fascinated by</span>
+        <div class="now-tags">
+            <span class="now-tag">5th metatarsal fracture takes 6 weeks to heal??</span>
+        </div>
+        <div class="now-item-note" style="margin-top:12px;">going through my first r/neverbrokeabone moment</div>
+        </div>
+    </div>
+
+    <p class="now-footer-note">
+        What is a /now page? <a href="https://nownownow.com/about" target="_blank">Derek Sivers explains it better than I can.</a>
+    </p>
+
+</main>
+
+<footer class="footer">
+    <p>Inspired by dank memes &amp; big dreams</p>
+    <div class="icons">
+        <span class="icon-btn" data-tooltip="no funny tweets"><i class="fa-brands fa-twitter"></i></span>
+        <span class="icon-btn" data-tooltip="inactive since 2021"><i class="fa-brands fa-instagram"></i></span>
+        <a href="https://linkedin.com/in/raahul42" target="_blank" class="icon-btn" data-tooltip="might accept invite"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p>Made with <i class="fa-solid fa-heart"></i> by myself <span class="claude-credit">&amp; claude</span> &copy; <span id="year"></span></p>
+</footer>
+
+<script>
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+            document.body.classList.remove('loading');
+        }, 500);
+    });
+
+    const navLinks = document.getElementById("navLinks");
+    function showMenu() { navLinks.style.right = "0"; }
+    function HideMenu() { navLinks.style.right = "-280px"; }
+
+    const navbar = document.getElementById("navbar");
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') applyTheme('light');
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.getElementById('themeIcon').className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        localStorage.setItem('theme', theme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

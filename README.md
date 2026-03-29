@@ -8,7 +8,7 @@ Personal portfolio site — a story-driven single-page site rather than a resume
 - **My Story** — a short narrative about the journey from Chemical Engineering to Data Science
 - **Journey timeline** — NIT Trichy → Capgemini → IIM Calcutta → Data Scientist (2024–present)
 - **What I'm Building** — what I work on professionally and personally
-- **Easter egg** — 🎭
+- **Easter egg** — 🥚
 
 ## Stack
 

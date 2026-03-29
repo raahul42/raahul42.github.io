@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Privacy Stack — Raahul Nallasamy</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <meta name="description" content="Tools Raahul uses to keep his digital life private and secure."/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <style>
+        .privacy-hero {
+            min-height: 38vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 130px 24px 50px;
+            position: relative;
+        }
+        .privacy-hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+        .privacy-hero p {
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 500px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .privacy-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            opacity: 0.5;
+            letter-spacing: 0.2px;
+        }
+        .tools-section {
+            padding: 10px 0 100px;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 88%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .tool-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 28px 28px 24px;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--card-border-hover);
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+        }
+        .tool-icon {
+            font-size: 30px;
+            margin-bottom: 18px;
+            display: block;
+        }
+        .tool-category {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 5px;
+        }
+        .tool-name {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin: 0;
+            transition: color 0.25s ease;
+        }
+        .tool-card:hover .tool-name {
+            color: var(--accent);
+        }
+        .tool-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.65;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            margin-top: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease 0.05s, margin-top 0.3s ease;
+        }
+        .tool-card:hover .tool-desc {
+            max-height: 160px;
+            opacity: 1;
+            margin-top: 12px;
+        }
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            margin-top: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease 0.08s, margin-top 0.3s ease;
+        }
+        .tool-card:hover .tool-link {
+            max-height: 36px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+        @media (max-width: 900px) {
+            .tools-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+            .tools-grid { grid-template-columns: 1fr; width: 92%; }
+            .tool-desc { max-height: none; opacity: 1; margin-top: 12px; }
+            .tool-link { max-height: none; opacity: 1; margin-top: 10px; }
+        }
+    </style>
+</head>
+<body class="loading">
+
+<!-- Page Loader -->
+<div class="page-loader" id="loader">
+    <div class="loader-spinner"></div>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <h2 class="nav-logo" data-tooltip="No one made a wikipedia page yet!">
+        <a href="index.html" style="color: inherit; text-decoration: none;">Raahul Nallasamy</a>
+    </h2>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+    <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
+    <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
+        <ul>
+            <li><a href="index.html#home" class="nav-item">Home</a></li>
+            <li><a href="index.html#about" class="nav-item">About</a></li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Building <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://github.com/raahul42/tree-tracker" target="_blank">
+                        <i class="fa-solid fa-seedling"></i> tree-tracker
+                    </a>
+                    <a href="https://www.youtube.com/c/raahul42" target="_blank">
+                        <i class="fa-brands fa-youtube"></i> YouTube Community
+                    </a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Substack <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://raahul5842.substack.com" target="_blank">
+                        <i class="fa-solid fa-pen-nib"></i> ...writing
+                    </a>
+                </div>
+            </li>
+            <li><a href="privacy.html" class="nav-item active">Privacy</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="privacy-hero">
+    <div class="mesh-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <h1 style="position:relative;z-index:1;"><span class="gradient-text">Privacy</span> Stack.</h1>
+    <p style="position:relative;z-index:1;max-width:620px;">Certified privacy nerd (self-appointed). These are the tools I've actually settled on — shared here because everyone deserves to know this exists.</p>
+    <p class="privacy-note" style="position:relative;z-index:1;">no one is paying me for this (sadly). this is just what works for me.</p>
+</div>
+
+<!-- Tools Grid -->
+<section class="tools-section">
+    <div class="tools-grid">
+
+        <!-- Brave -->
+        <a href="https://brave.com" target="_blank" class="tool-card reveal">
+            <i class="tool-icon fa-solid fa-shield-halved" style="color: #FB542B;"></i>
+            <span class="tool-category">Browser</span>
+            <h3 class="tool-name">Brave</h3>
+            <p class="tool-desc">Chromium-based browser with built-in shields. Blocks ads, trackers, and fingerprinting out of the box — no extensions needed. All your Chrome extensions still work.</p>
+            <span class="tool-link">brave.com <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        </a>
+
+        <!-- Proton Pass -->
+        <a href="https://proton.me/pass" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.1s">
+            <i class="tool-icon fa-solid fa-key" style="color: #6D4AFF;"></i>
+            <span class="tool-category">Password Manager</span>
+            <h3 class="tool-name">Proton Pass</h3>
+            <p class="tool-desc">Open-source password manager from the Proton team — the same people behind ProtonMail. End-to-end encrypted, zero-knowledge, built in Switzerland under strong privacy laws.</p>
+            <span class="tool-link">proton.me/pass <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        </a>
+
+        <!-- Proton Authenticator -->
+        <a href="https://proton.me/pass/authenticator" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.2s">
+            <i class="tool-icon fa-solid fa-mobile-screen-button" style="color: #22c55e;"></i>
+            <span class="tool-category">Two-Factor Auth</span>
+            <h3 class="tool-name">Proton Authenticator</h3>
+            <p class="tool-desc">Open-source TOTP app with end-to-end encrypted backups. Unlike Google Authenticator, you won't lose all your 2FA codes if you lose your phone. Also use Google Authenticator where needed.</p>
+            <span class="tool-link">proton.me/pass/authenticator <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        </a>
+
+        <!-- Quad9 -->
+        <a href="https://quad9.net" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.05s">
+            <i class="tool-icon fa-solid fa-circle-nodes" style="color: #38bdf8;"></i>
+            <span class="tool-category">DNS</span>
+            <h3 class="tool-name">Quad9</h3>
+            <p class="tool-desc">Free, privacy-focused DNS resolver (9.9.9.9) that blocks malicious domains at the DNS layer. Doesn't log your queries. Run by a Swiss non-profit — no commercial interest in your data.</p>
+            <span class="tool-link">quad9.net <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        </a>
+
+        <!-- Pi-hole -->
+        <a href="https://pi-hole.net" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.15s">
+            <i class="tool-icon fa-solid fa-network-wired" style="color: #ef4444;"></i>
+            <span class="tool-category">Network</span>
+            <h3 class="tool-name">Pi-hole</h3>
+            <p class="tool-desc">A DNS sinkhole running on a Raspberry Pi Zero W that blocks ads and trackers for every device on the home network. Your TV, phone, laptop — all covered without installing anything on them.</p>
+            <span class="tool-link">pi-hole.net <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        </a>
+
+        <!-- Mobile -->
+        <a href="https://spreadprivacy.com/introducing-app-tracking-protection/" target="_blank" class="tool-card reveal" style="--reveal-delay: 0.25s">
+            <i class="tool-icon fa-solid fa-mobile" style="color: #8b5cf6;"></i>
+            <span class="tool-category">Mobile</span>
+            <h3 class="tool-name">Phone Privacy</h3>
+            <p class="tool-desc">On iPhone 14 — App Tracking Transparency on, location set to "never" for most apps, ad personalisation off. On Android — DuckDuckGo's VPN blocks app-level trackers across every app on the device.</p>
+            <span class="tool-link">DDG App Tracking Protection <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        </a>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>Inspired by dank memes &amp; big dreams</p>
+    <div class="icons">
+        <span class="icon-btn" data-tooltip="no funny tweets"><i class="fa-brands fa-twitter"></i></span>
+        <span class="icon-btn" data-tooltip="inactive since 2021"><i class="fa-brands fa-instagram"></i></span>
+        <a href="https://linkedin.com/in/raahul42" target="_blank" class="icon-btn" data-tooltip="might accept invite"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p>Made with <i class="fa-solid fa-heart"></i> by myself <span class="claude-credit">&amp; claude</span> &copy; <span id="year"></span></p>
+</footer>
+
+<script>
+    // Page Loader
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+            document.body.classList.remove('loading');
+        }, 500);
+    });
+
+    // Mobile Nav
+    const navLinks = document.getElementById("navLinks");
+    function showMenu() { navLinks.style.right = "0"; }
+    function HideMenu() { navLinks.style.right = "-280px"; }
+
+    // Navbar glass on scroll
+    const navbar = document.getElementById("navbar");
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll Reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Theme toggle
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') applyTheme('light');
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.getElementById('themeIcon').className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        localStorage.setItem('theme', theme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Dynamic copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

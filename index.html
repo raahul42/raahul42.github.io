@@ -71,7 +71,7 @@
         <h1><span class="gradient-text">Raahul.</span></h1>
         <h2 class="typed-line">I'm <span id="typed-text"></span><span class="cursor">|</span></h2>
         <p>Chemical engineer turned data scientist. Currently at the intersection of<br>
-        machine learning, analytics, and figuring things out.</p>
+        machine learning, statistics-free AI vibe coding, and figuring things out.</p>
         <div class="hero-btns">
             <a href="mailto:raahul42@proton.me" class="btn btn-primary">Get In Touch</a>
         </div>
@@ -224,17 +224,24 @@
 
     // Typewriter Effect
     const roles = ["a data scientist.", "a developer.", "a vibe coder.", "an occasional reader.", "the imposter. ඞ"];
+    const rolesHTML = roles.map((r, i) => i === 4 ? 'the imposter. <span style="color:#ff4757">ඞ</span>' : null);
     let roleIndex = 0, charIndex = 0, isDeleting = false;
     const typedEl = document.getElementById('typed-text');
 
     function typeWriter() {
         const current = roles[roleIndex];
-        typedEl.textContent = isDeleting
-            ? current.substring(0, --charIndex)
-            : current.substring(0, ++charIndex);
+        const fullyTyped = !isDeleting && charIndex === current.length;
+
+        if (fullyTyped && rolesHTML[roleIndex]) {
+            typedEl.innerHTML = rolesHTML[roleIndex];
+        } else {
+            typedEl.textContent = isDeleting
+                ? current.substring(0, --charIndex)
+                : current.substring(0, ++charIndex);
+        }
 
         let speed = isDeleting ? 50 : 100;
-        if (!isDeleting && charIndex === current.length) {
+        if (fullyTyped) {
             speed = 2000; isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;

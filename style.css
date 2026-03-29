@@ -1387,8 +1387,17 @@ a.icon-btn {
         padding: 7px 13px;
     }
 
+    #navbar {
+        justify-content: flex-start;
+    }
+
     .menu-icon {
         display: block;
+        margin-left: auto;
+    }
+
+    .theme-toggle {
+        margin-left: 10px;
     }
 
     .nav-links {

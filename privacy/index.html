@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <style>
@@ -162,7 +162,7 @@
 <!-- Navigation -->
 <nav id="navbar">
     <h2 class="nav-logo" data-tooltip="no one made a wikipedia page yet">
-        <a href="index.html" style="color: inherit; text-decoration: none;">Raahul Nallasamy</a>
+        <a href="/" style="color: inherit; text-decoration: none;">Raahul Nallasamy</a>
     </h2>
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
         <i class="fa-solid fa-moon" id="themeIcon"></i>
@@ -171,8 +171,8 @@
     <div class="nav-links" id="navLinks">
         <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
         <ul>
-            <li><a href="index.html#home" class="nav-item">Home</a></li>
-            <li><a href="index.html#about" class="nav-item">About</a></li>
+            <li><a href="/#home" class="nav-item">Home</a></li>
+            <li><a href="/#about" class="nav-item">About</a></li>
             <li class="nav-dropdown">
                 <a href="#" class="nav-item dropdown-trigger">Building <i class="fa-solid fa-chevron-down fa-xs"></i></a>
                 <div class="dropdown-menu">
@@ -192,8 +192,8 @@
                     </a>
                 </div>
             </li>
-            <li><a href="privacy.html" class="nav-item active">Privacy</a></li>
-            <li><a href="now.html" class="nav-item">Now</a></li>
+            <li><a href="/privacy" class="nav-item active">Privacy</a></li>
+            <li><a href="/now" class="nav-item">Now</a></li>
         </ul>
     </div>
 </nav>
@@ -205,8 +205,8 @@
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
     </div>
-    <h1 style="position:relative;z-index:1;"><span class="gradient-text">Privacy</span> Stack.</h1>
-    <p style="position:relative;z-index:1;max-width:620px;">Certified privacy nerd (self-appointed). These are the tools I've actually settled on — sharing these here because everyone deserves to know that these exist.</p>
+    <h1 style="position:relative;z-index:1;"><span class="gradient-text" id="privacy-typed"></span><span class="cursor">|</span></h1>
+    <p style="position:relative;z-index:1;max-width:700px;">I believe everyone has the right to worry about <em>and</em> actively protect their online privacy. Your data and attention should never be monetised without your knowledge, consent or choice. And these are just some tools that I've settled on for now. I'm sharing it here so that you know / remember that these exist.</p>
     <p class="privacy-note" style="position:relative;z-index:1;max-width:620px;">no one is paying me for this (sadly). this is just what works for me.</p>
 </div>
 
@@ -340,6 +340,20 @@
         const current = document.documentElement.getAttribute('data-theme') || 'dark';
         applyTheme(current === 'dark' ? 'light' : 'dark');
     }
+
+    // Hero typewriter
+    const privacyRoles = ["Privacy Stack.", "Should have one."];
+    let pRoleIdx = 0, pCharIdx = 0, pDeleting = false;
+    const pTyped = document.getElementById('privacy-typed');
+    function privacyTypeWriter() {
+        const current = privacyRoles[pRoleIdx];
+        pTyped.textContent = pDeleting ? current.substring(0, --pCharIdx) : current.substring(0, ++pCharIdx);
+        let speed = pDeleting ? 50 : 100;
+        if (!pDeleting && pCharIdx === current.length) { speed = 2500; pDeleting = true; }
+        else if (pDeleting && pCharIdx === 0) { pDeleting = false; pRoleIdx = (pRoleIdx + 1) % privacyRoles.length; speed = 400; }
+        setTimeout(privacyTypeWriter, speed);
+    }
+    privacyTypeWriter();
 
     // Dynamic copyright year
     document.getElementById('year').textContent = new Date().getFullYear();

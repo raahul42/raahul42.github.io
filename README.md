@@ -9,6 +9,8 @@ Personal portfolio site — a story-driven single-page site rather than a resume
 - **Journey timeline** — NIT Trichy → Capgemini → IIM Calcutta → Data Scientist (2024–present)
 - **What I'm Building** — what I work on professionally and personally
 - **Easter egg** — 🥚
+- **Privacy Stack** (`/privacy`) — tools I use to keep my digital life private: Brave, Proton Pass, Proton Authenticator, Quad9, Pi-hole, and phone privacy settings. Hover-expand cards with descriptions and links.
+- **Now** (`/now`) — a [/now page](https://nownownow.com/about) covering what I'm reading, watching, shooting, and currently fascinated by. Updated occasionally.
 
 ## Stack
 

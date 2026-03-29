@@ -58,6 +58,10 @@
         .tool-card-wrap {
             position: relative;
             height: 170px;
+            z-index: 1;
+        }
+        .tool-card-wrap:has(.tool-card:hover) {
+            z-index: 20;
         }
         .tool-card {
             background: var(--card-bg);

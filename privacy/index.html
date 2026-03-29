@@ -146,10 +146,21 @@
         @media (max-width: 900px) {
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
         }
+        @media (max-width: 700px) {
+            .tool-card-wrap { height: auto; min-height: 160px; }
+            .tool-card-wrap:has(.tool-card.expanded) { z-index: 20; }
+            .tool-card { position: relative; top: auto; left: auto; right: auto; }
+            .tool-card.expanded {
+                background: var(--bg-surface);
+                backdrop-filter: none;
+                border-color: var(--card-border-hover);
+                box-shadow: 0 20px 44px rgba(0,0,0,0.25);
+            }
+            .tool-card.expanded .tool-desc { max-height: 200px; opacity: 1; margin-top: 12px; }
+            .tool-card.expanded .tool-link { max-height: 36px; opacity: 1; margin-top: 10px; }
+        }
         @media (max-width: 560px) {
             .tools-grid { grid-template-columns: 1fr; width: 92%; }
-            .tool-desc { max-height: none; opacity: 1; margin-top: 12px; }
-            .tool-link { max-height: none; opacity: 1; margin-top: 10px; }
         }
     </style>
 </head>
@@ -353,19 +364,39 @@
         applyTheme(current === 'dark' ? 'light' : 'dark');
     }
 
-    // Hero typewriter
-    const privacyRoles = ["Privacy Stack.", "Should have one."];
-    let pRoleIdx = 0, pCharIdx = 0, pDeleting = false;
+    // Hero fade alternator
+    const privacyPhrases = ["Privacy Stack.", "That everyone needs."];
+    let pIdx = 0;
     const pTyped = document.getElementById('privacy-typed');
-    function privacyTypeWriter() {
-        const current = privacyRoles[pRoleIdx];
-        pTyped.textContent = pDeleting ? current.substring(0, --pCharIdx) : current.substring(0, ++pCharIdx);
-        let speed = pDeleting ? 50 : 100;
-        if (!pDeleting && pCharIdx === current.length) { speed = 2500; pDeleting = true; }
-        else if (pDeleting && pCharIdx === 0) { pDeleting = false; pRoleIdx = (pRoleIdx + 1) % privacyRoles.length; speed = 400; }
-        setTimeout(privacyTypeWriter, speed);
+    function cyclePhrase() {
+        pTyped.style.opacity = '0';
+        setTimeout(() => {
+            pIdx = (pIdx + 1) % privacyPhrases.length;
+            pTyped.textContent = privacyPhrases[pIdx];
+            pTyped.style.opacity = '1';
+        }, 600);
     }
-    privacyTypeWriter();
+    pTyped.textContent = privacyPhrases[0];
+    pTyped.style.transition = 'opacity 0.6s ease';
+    setInterval(cyclePhrase, 3000);
+
+    // Mobile card tap: first tap expands, second tap follows link, outside tap collapses
+    if (window.innerWidth <= 700) {
+        document.querySelectorAll('.tool-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!this.classList.contains('expanded')) {
+                    e.preventDefault();
+                    document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('expanded'));
+                    this.classList.add('expanded');
+                }
+            });
+        });
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.tool-card')) {
+                document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('expanded'));
+            }
+        });
+    }
 
     // Dynamic copyright year
     document.getElementById('year').textContent = new Date().getFullYear();

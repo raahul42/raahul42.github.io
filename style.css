@@ -1059,6 +1059,10 @@ section {
         margin-left: 5px;
     }
 
+    .node-content p br {
+        display: none;
+    }
+
 }
 
 /* ===========================

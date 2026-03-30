@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Raahul Nallasamy</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <meta name="description" content="Raahul Nallasamy — Data Scientist & ML Engineer"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <!-- GoatCounter analytics — privacy-friendly, no cookies -->
+    <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body class="loading">
+
+<!-- Page Loader -->
+<div class="page-loader" id="loader">
+    <div class="loader-spinner"></div>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <h2 class="nav-logo" data-tooltip="no one made a wikipedia page yet">Raahul Nallasamy</h2>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+    <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
+    <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
+        <ul>
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Building <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://github.com/raahul42/tree-tracker" target="_blank">
+                        <i class="fa-solid fa-seedling"></i> tree-tracker
+                    </a>
+                    <a href="https://www.youtube.com/c/raahul42" target="_blank">
+                        <i class="fa-brands fa-youtube"></i> YouTube Community
+                    </a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-item dropdown-trigger">Substack <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+                <div class="dropdown-menu">
+                    <a href="https://raahul5842.substack.com" target="_blank">
+                        <i class="fa-solid fa-pen-nib"></i> ...writing
+                    </a>
+                </div>
+            </li>
+            <li><a href="/privacy" class="nav-item">Privacy</a></li>
+            <li><a href="/now" class="nav-item">Now</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="header" id="home">
+    <div class="mesh-bg" id="meshBg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="text-box">
+        <h1><span class="gradient-text">Raahul.</span></h1>
+        <h2 class="typed-line">I'm <span id="typed-text"></span><span class="cursor">|</span></h2>
+        <p>Chemical engineer turned data scientist. Currently at the intersection of<br>
+        machine learning, statistics-free AI vibe coding, and figuring things out.</p>
+        <div class="hero-btns">
+            <div class="hero-btns-row">
+                <a href="/now" class="btn btn-now">See what I'm doing Now</a>
+                <a href="/privacy" class="btn btn-privacy">My Privacy Stack</a>
+            </div>
+            <a href="mailto:contact-form-only" class="btn btn-primary btn-sm">Get In Touch</a>
+        </div>
+    </div>
+
+    <!-- Fun Easter egg -->
+    <button class="vadi-btn" id="vadiBtn" onclick="toggleVadi()" title="???">🥚</button>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-down">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- About / Story Section -->
+<section class="about" id="about">
+
+    <div class="story-intro reveal">
+        <h2 class="section-title">My Story</h2>
+        <p class="story-text">
+            I started out studying Chemical Engineering at NIT Trichy — loved the systems
+            thinking, less so the lab reports. After graduating I joined Capgemini as a
+            Senior Analyst, which taught me how tech actually works inside large organisations
+            (spoiler: a lot of Excel).
+        </p>
+        <p class="story-text">
+            That curiosity about data eventually pulled me toward a PGDBA from IIM Calcutta,
+            ISI Kolkata &amp; IIT Kharagpur — a programme that sits right at the edge of
+            statistics, computing, and business. These days I build things: NLP pipelines,
+            graph-based recommender systems, the occasional YouTube video.
+        </p>
+    </div>
+
+    <!-- Journey Timeline -->
+    <div class="journey reveal">
+        <div class="journey-node">
+            <div class="node-marker active"></div>
+            <div class="node-content">
+                <span class="node-year">2024 – present</span>
+                <h3>Data Scientist</h3>
+                <p>——</p>
+            </div>
+        </div>
+        <div class="journey-line"></div>
+        <div class="journey-node">
+            <div class="node-marker"></div>
+            <div class="node-content">
+                <span class="node-year">2022 – 24</span>
+                <h3 style="white-space: nowrap;">IIM Calcutta</h3>
+                <p>PGDBA (ISI Kolkata + IIT Kgp)</p>
+            </div>
+        </div>
+        <div class="journey-line"></div>
+        <div class="journey-node">
+            <div class="node-marker"></div>
+            <div class="node-content">
+                <span class="node-year">2021 – 22</span>
+                <h3>Capgemini</h3>
+                <p>Senior Analyst</p>
+            </div>
+        </div>
+        <div class="journey-line"></div>
+        <div class="journey-node">
+            <div class="node-marker"></div>
+            <div class="node-content">
+                <span class="node-year">2017 – 21</span>
+                <h3 style="white-space: nowrap;">NIT Trichy</h3>
+                <p>Chemical Engineering</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Currently -->
+    <div class="currently reveal">
+        <h2 class="section-title">What I'm Building</h2>
+        <p class="story-text center">
+            Professionally, I work on fraud prevention in financial networks —
+            building models that catch bad actors in card transaction data before
+            they do real damage. It's one of those problems where the stakes are
+            high enough that getting it right actually matters.
+        </p>
+        <p class="story-text center">
+            Outside of work, I build things I care about — whether that's creating
+            educational content to make technical ideas more accessible, or working
+            on tools that contribute in some small way to a healthier environment.
+            No grand plan, just a belief that the things you choose to spend time
+            on should mean something.
+        </p>
+    </div>
+
+</section>
+
+<!-- YouTube Section -->
+<section class="video-section" id="youtube">
+    <div class="about">
+        <h2 class="section-title reveal">On YouTube</h2>
+        <div class="video-container reveal">
+            <iframe src="https://www.youtube.com/embed/sytXMgEmZbY?si=A0dkl7CzipUG3kDM"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>Inspired by dank memes &amp; big dreams</p>
+    <div class="icons">
+        <span class="icon-btn" data-tooltip="no funny tweets"><i class="fa-brands fa-twitter"></i></span>
+        <span class="icon-btn" data-tooltip="inactive since 2021"><i class="fa-brands fa-instagram"></i></span>
+        <a href="https://linkedin.com/in/raahul42" target="_blank" class="icon-btn" data-tooltip="might accept invite"><i class="fa-brands fa-linkedin"></i></span></a>
+    </div>
+    <p>Made with <i class="fa-solid fa-heart"></i> by myself <span class="claude-credit">&amp; claude</span> &copy; <span id="year"></span></p>
+</footer>
+
+<script>
+    // Page Loader
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+            document.body.classList.remove('loading');
+        }, 500);
+    });
+
+    // Mobile Nav
+    const navLinks = document.getElementById("navLinks");
+    function showMenu() { navLinks.style.right = "0"; }
+    function HideMenu() { navLinks.style.right = "-280px"; document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open')); }
+
+    // Close menu on outside click
+    document.addEventListener('click', function(e) {
+        if (navLinks.style.right === '0px' &&
+            !navLinks.contains(e.target) &&
+            !e.target.closest('.menu-icon')) {
+            HideMenu();
+        }
+    });
+
+    // Close menu when tapping a direct nav link (not dropdowns)
+    document.querySelectorAll('#navLinks a:not(.dropdown-trigger)').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 700) HideMenu();
+        });
+    });
+
+    // Mobile dropdown toggles
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            if (window.innerWidth <= 700) {
+                e.preventDefault();
+                const parent = this.closest('.nav-dropdown');
+                parent.classList.toggle('open');
+            }
+        });
+    });
+
+    // Navbar glass on scroll
+    const navbar = document.getElementById("navbar");
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Typewriter Effect
+    const roles = ["a data scientist.", "a developer.", "a vibe coder.", "an occasional reader.", "the imposter. ඞ"];
+    const rolesHTML = roles.map((r, i) => i === 4 ? 'the imposter. <span style="color:#ff4757;font-size:0.85em;vertical-align:middle;line-height:1">ඞ</span>' : null);
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
+    const typedEl = document.getElementById('typed-text');
+
+    function typeWriter() {
+        const current = roles[roleIndex];
+        const fullyTyped = !isDeleting && charIndex === current.length;
+
+        if (fullyTyped && rolesHTML[roleIndex]) {
+            typedEl.innerHTML = rolesHTML[roleIndex];
+        } else {
+            typedEl.textContent = isDeleting
+                ? current.substring(0, --charIndex)
+                : current.substring(0, ++charIndex);
+        }
+
+        let speed = isDeleting ? 50 : 100;
+        if (fullyTyped) {
+            speed = 2000; isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            speed = 400;
+        }
+        setTimeout(typeWriter, speed);
+    }
+    typeWriter();
+
+    // Vadivelu Toggle
+    let vadiMode = false;
+    function toggleVadi() {
+        const header = document.querySelector('.header');
+        const meshBg = document.getElementById('meshBg');
+        const btn = document.getElementById('vadiBtn');
+        vadiMode = !vadiMode;
+        if (vadiMode) {
+            header.classList.add('vadi-active');
+            meshBg.style.display = "none";
+            btn.classList.add('active');
+        } else {
+            header.classList.remove('vadi-active');
+            meshBg.style.display = "block";
+            btn.classList.remove('active');
+        }
+    }
+
+    // Scroll Reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Active nav link highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sectionObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navItems.forEach(a => {
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+                });
+            }
+        });
+    }, { threshold: 0.4 });
+    sections.forEach(s => sectionObs.observe(s));
+
+    // Theme toggle
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') applyTheme('light');
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.getElementById('themeIcon').className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        localStorage.setItem('theme', theme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Dynamic copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

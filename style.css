@@ -340,6 +340,11 @@ section[id] {
     font-size: 12px;
 }
 
+.dropdown-menu a .fa-pen-nib {
+    color: #a78bfa;
+    font-size: 12px;
+}
+
 /* ===========================
    HERO SECTION
 =========================== */
@@ -1504,6 +1509,13 @@ a.icon-btn {
 
     .dropdown-trigger .fa-chevron-down {
         display: inline-block;
+        opacity: 0.5;
+        transition: transform 0.25s ease;
+    }
+
+    /* Disable hover-based rotation on mobile — only .open class should rotate */
+    .nav-dropdown:hover .fa-chevron-down {
+        transform: none;
         opacity: 0.5;
     }
 

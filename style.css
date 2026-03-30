@@ -553,33 +553,24 @@ section[id] {
     transform: translateY(-3px);
 }
 
-.btn-now {
-    background: rgba(16, 185, 129, 0.1);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.35);
-}
-
-.btn-now:hover {
-    background: rgba(16, 185, 129, 0.18);
-    border-color: #10b981;
-    transform: translateY(-3px);
-}
-
+.btn-now,
 .btn-privacy {
-    background: rgba(139, 92, 246, 0.1);
-    color: var(--accent-2);
-    border: 1px solid rgba(139, 92, 246, 0.35);
+    background: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
 }
 
+.btn-now:hover,
 .btn-privacy:hover {
-    background: rgba(139, 92, 246, 0.18);
-    border-color: var(--accent-2);
+    background: var(--accent);
+    color: #fff;
     transform: translateY(-3px);
 }
 
 .btn-sm {
-    padding: 10px 24px;
-    font-size: 14px;
+    padding: 8px 20px;
+    font-size: 13px;
+    opacity: 0.8;
 }
 
 /* Vadi Mode Button */

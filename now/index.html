@@ -176,7 +176,6 @@
         </div>
     </header>
 
-    <!-- Reading -->
     <div class="now-section">
         <span class="now-label">Reading</span>
         <div class="now-item">
@@ -186,7 +185,6 @@
         </div>
     </div>
 
-    <!-- Watching -->
     <div class="now-section">
         <span class="now-label">Watching</span>
         <div class="now-item">
@@ -195,7 +193,6 @@
         </div>
     </div>
 
-    <!-- Shooting -->
     <div class="now-section">
         <span class="now-label">Shooting</span>
         <div class="now-item">
@@ -205,7 +202,6 @@
         </div>
     </div>
 
-    <!-- Fascinated by -->
     <div class="now-section">
         <span class="now-label">Fascinated by</span>
         <div class="now-tags">
@@ -243,7 +239,6 @@
     function showMenu() { navLinks.style.right = "0"; }
     function HideMenu() { navLinks.style.right = "-280px"; document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open')); }
 
-    // Close menu on outside click
     document.addEventListener('click', function(e) {
         if (navLinks.style.right === '0px' &&
             !navLinks.contains(e.target) &&
@@ -252,7 +247,6 @@
         }
     });
 
-    // Close menu when tapping a direct nav link
     document.querySelectorAll('#navLinks a:not(.dropdown-trigger)').forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 700) HideMenu();

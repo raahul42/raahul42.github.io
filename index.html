@@ -12,17 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    <!-- GoatCounter analytics — privacy-friendly, no cookies -->
     <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body class="loading">
 
-<!-- Page Loader -->
 <div class="page-loader" id="loader">
     <div class="loader-spinner"></div>
 </div>
 
-<!-- Navigation -->
 <nav id="navbar">
     <h2 class="nav-logo" data-tooltip="no one made a wikipedia page yet">Raahul Nallasamy</h2>
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
@@ -54,7 +51,6 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
 <section class="header" id="home">
     <div class="mesh-bg" id="meshBg">
         <div class="orb orb-1"></div>
@@ -76,22 +72,19 @@
         </div>
     </div>
 
-    <!-- Fun Easter egg -->
     <button class="vadi-btn" id="vadiBtn" onclick="toggleVadi()" title="???"><svg viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg" width="20" height="25" style="display:block"><ellipse cx="12" cy="17" rx="9" ry="12" fill="#f5d76e"/><clipPath id="ec"><ellipse cx="12" cy="17" rx="9" ry="12"/></clipPath><g clip-path="url(#ec)"><rect x="0" y="12" width="24" height="3.5" fill="#e85d8a" opacity="0.85"/><rect x="0" y="19" width="24" height="3.5" fill="#5ba3e8" opacity="0.85"/><circle cx="7" cy="26" r="2" fill="#5cb85c" opacity="0.9"/><circle cx="17" cy="26" r="2" fill="#c77dda" opacity="0.9"/><circle cx="12" cy="8" r="1.5" fill="#f0902a" opacity="0.9"/></g><ellipse cx="12" cy="17" rx="9" ry="12" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="0.8"/></svg></button>
 
-    <!-- Scroll indicator -->
     <div class="scroll-down">
         <div class="scroll-arrow"></div>
     </div>
 </section>
 
-<!-- About / Story Section -->
 <section class="about" id="about">
 
     <div class="story-intro reveal">
         <h2 class="section-title">My Story</h2>
         <p class="story-text">
-            I started out studying Chemical Engineering at NIT Trichy - loved the labs, 
+            I started out studying Chemical Engineering at NIT Trichy - loved the labs,
             less so the lab reports. After graduating I joined Capgemini as a
             Senior Analyst, which taught me how tech actually works inside large organisations
             (spoiler: a lot of Excel).
@@ -104,7 +97,6 @@
         </p>
     </div>
 
-    <!-- Journey Timeline -->
     <div class="journey reveal">
         <div class="journey-node">
             <div class="node-marker active"></div>
@@ -145,7 +137,6 @@
 
     <div class="section-divider"></div>
 
-    <!-- Currently -->
     <div class="currently reveal">
         <h2 class="section-title">What I'm Building</h2>
         <p class="story-text center">
@@ -156,15 +147,14 @@
         </p>
         <p class="story-text center">
             Outside of work, I work on things I care about; whether that's creating
-            educational content, or working on tools that contribute in some small 
-            way to a healthier environment. No grand plan, just a belief that the 
+            educational content, or working on tools that contribute in some small
+            way to a healthier environment. No grand plan, just a belief that the
             things you choose to spend time on should mean something.
         </p>
     </div>
 
 </section>
 
-<!-- YouTube Section -->
 <section class="video-section" id="youtube">
     <div class="about">
         <h2 class="section-title reveal">On YouTube</h2>
@@ -178,7 +168,6 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
     <p>Inspired by dank memes &amp; big dreams</p>
     <div class="icons">
@@ -190,7 +179,6 @@
 </footer>
 
 <script>
-    // Page Loader
     window.addEventListener('load', () => {
         setTimeout(() => {
             document.getElementById('loader').classList.add('hidden');
@@ -198,12 +186,10 @@
         }, 500);
     });
 
-    // Mobile Nav
     const navLinks = document.getElementById("navLinks");
     function showMenu() { navLinks.style.right = "0"; }
     function HideMenu() { navLinks.style.right = "-280px"; document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open')); }
 
-    // Close menu on outside click
     document.addEventListener('click', function(e) {
         if (navLinks.style.right === '0px' &&
             !navLinks.contains(e.target) &&
@@ -212,14 +198,12 @@
         }
     });
 
-    // Close menu when tapping a direct nav link (not dropdowns)
     document.querySelectorAll('#navLinks a:not(.dropdown-trigger)').forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 700) HideMenu();
         });
     });
 
-    // Mobile dropdown toggles
     document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
         trigger.addEventListener('click', function(e) {
             if (window.innerWidth <= 700) {
@@ -230,13 +214,11 @@
         });
     });
 
-    // Navbar glass on scroll
     const navbar = document.getElementById("navbar");
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Typewriter Effect
     const roles = ["a data scientist.", "a developer.", "a vibe coder.", "an occasional reader.", "the imposter. ඞ"];
     const rolesHTML = roles.map((r, i) => i === 4 ? 'the imposter. <span style="color:#ff4757;font-size:0.85em;vertical-align:middle;line-height:1">ඞ</span>' : null);
     let roleIndex = 0, charIndex = 0, isDeleting = false;
@@ -266,7 +248,6 @@
     }
     typeWriter();
 
-    // Vadivelu Toggle
     let vadiMode = false;
     function toggleVadi() {
         const header = document.querySelector('.header');
@@ -284,7 +265,6 @@
         }
     }
 
-    // Scroll Reveal
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -296,7 +276,6 @@
     }, { threshold: 0.1 });
     revealEls.forEach(el => observer.observe(el));
 
-    // Active nav link highlight
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-item');
     const sectionObs = new IntersectionObserver((entries) => {
@@ -310,7 +289,6 @@
     }, { threshold: 0.4 });
     sections.forEach(s => sectionObs.observe(s));
 
-    // Theme toggle
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') applyTheme('light');
 
@@ -325,7 +303,6 @@
         applyTheme(current === 'dark' ? 'light' : 'dark');
     }
 
-    // Dynamic copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 

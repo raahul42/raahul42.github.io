@@ -5,9 +5,9 @@
     --bg: #080d1a;
     --bg-surface: #0f172a;
     --text: #f1f5f9;
-    --text-muted: #64748b;
+    --text-muted: #7a8fa0;
     --accent: #38bdf8;
-    --accent-2: #8b5cf6;
+    --accent-2: #2dd4bf;
     --card-bg: rgba(255, 255, 255, 0.04);
     --card-border: rgba(255, 255, 255, 0.08);
     --card-border-hover: rgba(255, 255, 255, 0.18);
@@ -20,11 +20,11 @@ html[data-theme="light"] {
     --text: #1a1208;
     --text-muted: #7a6a54;
     --accent: #0284c7;
-    --accent-2: #7c3aed;
+    --accent-2: #0d9488;
     --card-bg: rgba(0, 0, 0, 0.04);
     --card-border: rgba(0, 0, 0, 0.08);
     --card-border-hover: rgba(0, 0, 0, 0.2);
-    --gradient: linear-gradient(135deg, #0284c7, #7c3aed);
+    --gradient: linear-gradient(135deg, #0284c7, #0d9488);
 }
 
 html[data-theme="light"] body {
@@ -643,7 +643,7 @@ section[id] {
 .reveal {
     opacity: 0;
     transform: translateY(32px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     transition-delay: var(--reveal-delay, 0s);
 }
 

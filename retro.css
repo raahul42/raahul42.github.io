@@ -144,6 +144,16 @@ html[data-theme="dark"] #navbar.scrolled {
     box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.08);
 }
 
+/* Invisible bridge so mouse doesn't fall off during hover animation gap */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
 html[data-theme="light"] .dropdown-menu,
 html:not([data-theme]) .dropdown-menu {
     background: rgba(221, 184, 130, 0.98);
@@ -157,6 +167,17 @@ html[data-theme="dark"] .dropdown-menu {
     font-family: 'Crimson Text', serif;
     font-size: 14.5px;
     border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+    .dropdown-menu,
+    html[data-theme="light"] .dropdown-menu,
+    html[data-theme="dark"] .dropdown-menu,
+    html:not([data-theme]) .dropdown-menu {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 }
 
 /* Mobile nav panel */

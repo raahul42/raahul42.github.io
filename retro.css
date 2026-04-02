@@ -1,0 +1,428 @@
+/* ===================================================
+   RETRO INK & PAPER THEME — raahul42.github.io
+   Paper + inked-text aesthetic, inspired by editorial
+   print design. Overrides style.css completely.
+   =================================================== */
+
+/* ---- VARIABLES — lock retro palette regardless of data-theme ---- */
+html,
+html[data-theme="dark"],
+html[data-theme="light"] {
+    --bg:               #f5f0e1;
+    --bg-surface:       #ece7d3;
+    --text:             #1c0f00;
+    --text-muted:       #6b4c2a;
+    --accent:           #8b1a1a;
+    --accent-2:         #5c4a1e;
+    --card-bg:          rgba(28, 15, 0, 0.04);
+    --card-border:      rgba(28, 15, 0, 0.16);
+    --card-border-hover:rgba(28, 15, 0, 0.36);
+    --gradient:         linear-gradient(135deg, #8b1a1a, #5c4a1e);
+}
+
+/* ---- PAPER GRAIN OVERLAY ---- */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9997;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");
+    opacity: 1;
+}
+
+/* ---- BASE ---- */
+html {
+    font-family: 'Crimson Text', Georgia, serif;
+    background: var(--bg);
+}
+
+html[data-theme="light"] body {
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+.page-loader {
+    background: var(--bg);
+}
+
+/* Hide animated orbs — replaced by paper grain */
+.mesh-bg {
+    display: none !important;
+}
+
+/* ---- NAVBAR ---- */
+#navbar {
+    background: transparent;
+    padding: 22px 6%;
+}
+
+#navbar.scrolled {
+    background: rgba(245, 240, 225, 0.96);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: 0 2px 12px rgba(28, 15, 0, 0.07);
+}
+
+html[data-theme="light"] #navbar.scrolled {
+    background: rgba(245, 240, 225, 0.96);
+}
+
+html[data-theme="light"] .nav-links {
+    background: rgba(245, 240, 225, 0.97) !important;
+}
+
+.nav-logo {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.2px;
+}
+
+.nav-logo::after {
+    background: rgba(245, 240, 225, 0.97);
+    backdrop-filter: none;
+    border: 1px solid var(--card-border);
+    border-radius: 3px;
+}
+
+.nav-item {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.nav-item::after {
+    background: var(--accent);
+    height: 1px;
+    border-radius: 0;
+}
+
+/* Hide the theme toggle — retro prototype is always paper */
+.theme-toggle {
+    display: none;
+}
+
+.dropdown-menu {
+    background: rgba(245, 240, 225, 0.98);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 3px;
+    border: 1px solid var(--card-border);
+    box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.08);
+}
+
+html[data-theme="light"] .dropdown-menu {
+    background: rgba(245, 240, 225, 0.98);
+}
+
+.dropdown-menu a {
+    font-family: 'Crimson Text', serif;
+    font-size: 14.5px;
+    border-radius: 2px;
+}
+
+/* Mobile nav panel */
+@media (max-width: 700px) {
+    .nav-links {
+        background: rgba(245, 240, 225, 0.97) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border-left: 1px solid var(--card-border);
+    }
+}
+
+/* ---- HERO SECTION ---- */
+.header {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at center, transparent 55%, rgba(28, 15, 0, 0.07) 100%);
+}
+
+html[data-theme="light"] .header {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at center, transparent 55%, rgba(28, 15, 0, 0.07) 100%);
+}
+
+.header.vadi-active {
+    background-image:
+        linear-gradient(rgba(245, 240, 225, 0.75), rgba(245, 240, 225, 0.92)),
+        url('images/vadivelu.png');
+    background-size: cover;
+    background-position: center;
+}
+
+html[data-theme="light"] .header.vadi-active {
+    background-image:
+        linear-gradient(rgba(245, 240, 225, 0.75), rgba(245, 240, 225, 0.92)),
+        url('images/vadivelu.png');
+}
+
+.text-box h1 {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -1px;
+    color: var(--text);
+}
+
+/* Override gradient text → plain ink */
+.gradient-text {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: var(--text);
+    background-clip: unset;
+    color: var(--text);
+}
+
+.typed-line {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    font-size: clamp(16px, 2.6vw, 25px);
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.cursor {
+    color: var(--accent);
+}
+
+.text-box p {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background: var(--text);
+    color: var(--bg);
+    box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 rgba(28, 15, 0, 0.25);
+}
+
+.btn-now,
+.btn-privacy {
+    background: transparent;
+    color: var(--text);
+    border: 1.5px solid rgba(28, 15, 0, 0.3);
+    box-shadow: 2px 2px 0 rgba(28, 15, 0, 0.1);
+}
+
+.btn-now:hover,
+.btn-privacy:hover {
+    background: var(--text);
+    color: var(--bg);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.2);
+}
+
+/* ---- VADI EASTER EGG BTN ---- */
+.vadi-btn {
+    backdrop-filter: none;
+    border-radius: 2px;
+    border: 1px solid var(--card-border);
+    background: var(--bg);
+}
+
+/* ---- SCROLL ARROW ---- */
+.scroll-arrow {
+    border-color: var(--text-muted);
+    opacity: 0.3;
+}
+
+/* ---- ABOUT SECTION ---- */
+.section-title {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.5px;
+    color: var(--text);
+}
+
+/* Ink rule beneath every section title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 52px;
+    height: 1px;
+    background: var(--accent);
+    margin: 14px auto 0;
+    opacity: 0.55;
+}
+
+.story-text {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 18.5px;
+    line-height: 1.9;
+}
+
+/* ---- JOURNEY TIMELINE ---- */
+.node-marker {
+    background: var(--text-muted);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1.5px var(--card-border);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.node-marker.active {
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.18);
+}
+
+.journey-node:hover .node-marker {
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.18);
+}
+
+.journey-line {
+    background: var(--card-border);
+}
+
+.node-year {
+    font-family: 'Special Elite', monospace;
+    font-size: 10.5px;
+    color: var(--text-muted);
+    letter-spacing: 0.8px;
+}
+
+.node-content h3 {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--text);
+    letter-spacing: 0;
+}
+
+.node-content p,
+.node-sub {
+    font-family: 'Crimson Text', serif;
+    color: var(--text-muted);
+}
+
+/* Mobile journey cards */
+@media (max-width: 700px) {
+    .journey-node {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 3px;
+    }
+}
+
+/* ---- SECTION DIVIDER ---- */
+.section-divider {
+    background: linear-gradient(to right, transparent, rgba(28, 15, 0, 0.18), transparent);
+}
+
+/* ---- VIDEO SECTION ---- */
+.video-container {
+    border-radius: 3px;
+    border: 1px solid var(--card-border);
+    box-shadow: 5px 5px 0 rgba(28, 15, 0, 0.09);
+}
+
+/* ---- FOOTER ---- */
+.footer {
+    border-top: 1px solid var(--card-border);
+}
+
+.footer p {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.icon-btn {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    border-radius: 2px;
+    color: var(--text-muted);
+    backdrop-filter: none;
+}
+
+.icon-btn::after {
+    background: rgba(245, 240, 225, 0.97);
+    backdrop-filter: none;
+    border: 1px solid var(--card-border);
+    border-radius: 3px;
+    color: var(--text-muted);
+}
+
+html[data-theme="light"] .icon-btn::after,
+html[data-theme="light"] .nav-logo::after {
+    background: rgba(245, 240, 225, 0.97);
+}
+
+.icon-btn:hover {
+    color: var(--accent);
+    border-color: rgba(139, 26, 26, 0.45);
+    box-shadow: 2px 2px 0 rgba(139, 26, 26, 0.1);
+    transform: none;
+}
+
+/* ---- BENTO CARDS (if any) ---- */
+.bento-card {
+    border-radius: 3px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid var(--card-border);
+}
+
+.bento-card h3 {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+/* ---- TOOL CARDS ---- */
+.tool-card {
+    border-radius: 3px;
+    backdrop-filter: none;
+    border: 1px solid var(--card-border);
+}
+
+.tool-card:hover {
+    box-shadow: 4px 4px 0 rgba(28, 15, 0, 0.09);
+    transform: translate(-2px, -2px);
+}
+
+.tool-name {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.tool-category {
+    font-family: 'Special Elite', monospace;
+    letter-spacing: 1.5px;
+}
+
+.tool-desc {
+    font-family: 'Crimson Text', serif;
+    font-size: 14.5px;
+}
+
+/* ---- LOADER SPINNER ---- */
+.loader-spinner {
+    border-color: var(--card-border);
+    border-top-color: var(--accent);
+}

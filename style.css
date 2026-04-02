@@ -1332,7 +1332,7 @@ a.icon-btn {
         width: 92%;
     }
 
-    /* Always show desc on mobile — hover doesn't work well on touch */
+
     .tool-desc {
         max-height: none;
         opacity: 1;
@@ -1431,7 +1431,7 @@ a.icon-btn {
         font-size: 22px;
     }
 
-    /* Mobile dropdown — collapsed by default, toggle on click */
+
     .nav-dropdown .dropdown-menu {
         position: static;
         transform: none;
@@ -1469,7 +1469,7 @@ a.icon-btn {
         transition: transform 0.25s ease;
     }
 
-    /* Disable hover-based rotation on mobile — only .open class should rotate */
+
     .nav-dropdown:hover .fa-chevron-down {
         transform: none;
         opacity: 0.5;

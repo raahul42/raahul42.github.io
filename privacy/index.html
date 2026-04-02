@@ -8,9 +8,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../retro.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <style>
@@ -25,24 +26,26 @@
             position: relative;
         }
         .privacy-hero h1 {
-            font-size: clamp(36px, 6vw, 64px);
-            font-weight: 800;
-            letter-spacing: -2px;
+            font-family: 'IM Fell English', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 400;
+            letter-spacing: -1px;
             line-height: 1.1;
             margin-bottom: 14px;
             min-height: 1.2em;
         }
         .privacy-hero p {
-            font-size: 17px;
+            font-size: 18px;
             color: var(--text-muted);
             max-width: 500px;
             line-height: 1.7;
             margin-bottom: 8px;
         }
         .privacy-note {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--text-muted);
-            opacity: 0.5;
+            opacity: 0.7;
             letter-spacing: 0.2px;
         }
         .tools-section {
@@ -65,10 +68,9 @@
             z-index: 20;
         }
         .tool-card {
-            background: var(--card-bg);
+            background: transparent;
             border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
+            border-radius: 2px;
             padding: 28px 28px 24px;
             text-decoration: none;
             color: var(--text);
@@ -77,31 +79,36 @@
             top: 0; left: 0; right: 0;
             z-index: 1;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-shadow: 2px 2px 0 var(--card-bg);
         }
         .tool-card:hover {
-            background: var(--bg-surface);
-            backdrop-filter: none;
-            transform: translateY(-6px);
-            border-color: var(--card-border-hover);
-            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+            background: var(--bg);
+            transform: translate(-3px, -3px);
+            border-color: var(--text);
+            box-shadow: 4px 4px 0 var(--text);
             z-index: 10;
         }
         .tool-icon {
             font-size: 30px;
             margin-bottom: 18px;
             display: block;
+            color: var(--text) !important;
+            transition: color 0.3s ease;
+        }
+        .tool-card:hover .tool-icon {
+            color: var(--accent) !important;
         }
         .tool-category {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--accent);
             display: block;
             margin-bottom: 5px;
         }
         .tool-name {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             letter-spacing: -0.3px;
             margin: 0;
@@ -111,7 +118,8 @@
             color: var(--accent);
         }
         .tool-desc {
-            font-size: 13px;
+            font-size: 15px;
+            font-family: 'Crimson Text', serif;
             color: var(--text-muted);
             line-height: 1.65;
             max-height: 0;
@@ -129,7 +137,7 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--accent);
             max-height: 0;
@@ -151,17 +159,36 @@
             .tool-card-wrap:has(.tool-card.expanded) { z-index: 20; }
             .tool-card { position: relative; top: auto; left: auto; right: auto; }
             .tool-card.expanded {
-                background: var(--bg-surface);
-                backdrop-filter: none;
-                border-color: var(--card-border-hover);
-                box-shadow: 0 20px 44px rgba(0,0,0,0.25);
+                background: var(--bg);
+                border-color: var(--text);
+                box-shadow: 4px 4px 0 var(--text);
+                transform: translate(-2px, -2px);
             }
+            .tool-card.expanded .tool-icon { color: var(--accent) !important; }
             .tool-card.expanded .tool-desc { max-height: 200px; opacity: 1; margin-top: 12px; }
             .tool-card.expanded .tool-link { max-height: 36px; opacity: 1; margin-top: 10px; }
         }
         @media (max-width: 560px) {
             .tools-grid { grid-template-columns: 1fr; width: 92%; }
             .privacy-hero h1 { min-height: 2.5em; }
+        }
+        .ink-drop-privacy {
+            width: 32vw;
+            height: 32vw;
+            max-width: 320px;
+            max-height: 320px;
+            min-width: 150px;
+            min-height: 150px;
+            top: 25%;
+            left: -15%;
+            transform: rotate(45deg);
+        }
+        @media (max-width: 700px) {
+            .ink-drop-privacy {
+                top: 15%;
+                left: -20%;
+                opacity: 0.3;
+            }
         }
     </style>
 </head>
@@ -205,11 +232,7 @@
 </nav>
 
 <div class="privacy-hero">
-    <div class="mesh-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
+    <div class="ink-drop ink-drop-privacy"></div>
     <h1 style="position:relative;z-index:1;"><span class="gradient-text" id="privacy-typed"></span></h1>
     <p style="position:relative;z-index:1;max-width:700px;">I believe everyone has the right to worry about <em>and</em> actively protect their online privacy. Your data and attention should never be monetised without your knowledge, consent or choice. And these are just some tools that I've settled on for now. I'm sharing it here so that you know / remember that these exist.</p>
     <p class="privacy-note" style="position:relative;z-index:1;max-width:620px;">no one is paying me for this (sadly). this is just what works for me.</p>

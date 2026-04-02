@@ -1,332 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Raahul Nallasamy</title>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <meta name="description" content="Raahul Nallasamy — Data Scientist & ML Engineer"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="Raahul Nallasamy — Data Scientist & ML Engineer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="retro.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
+
 <body class="loading">
 
-<div class="page-loader" id="loader">
-    <div class="loader-spinner"></div>
-</div>
+    <div class="page-loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
 
-<nav id="navbar">
-    <h2 class="nav-logo" data-tooltip="no one made a wikipedia page yet">Raahul Nallasamy</h2>
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
-        <i class="fa-solid fa-moon" id="themeIcon"></i>
-    </button>
-    <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
-    <div class="nav-links" id="navLinks">
-        <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
-        <ul>
-            <li><a href="#home" class="nav-item">Home</a></li>
-            <li><a href="#about" class="nav-item">About</a></li>
-            <li class="nav-dropdown">
-                <a href="#" class="nav-item dropdown-trigger">Creating <i class="fa-solid fa-chevron-down fa-xs"></i></a>
-                <div class="dropdown-menu">
-                    <a href="https://github.com/raahul42/tree-tracker" target="_blank">
-                        <i class="fa-solid fa-seedling"></i> tree-tracker
-                    </a>
-                    <a href="https://www.youtube.com/c/raahul42" target="_blank">
-                        <i class="fa-brands fa-youtube"></i> YouTube Community
-                    </a>
-                    <a href="https://raahul5842.substack.com" target="_blank">
-                        <i class="fa-solid fa-pen-nib"></i> Substack
-                    </a>
+    <nav id="navbar">
+        <h2 class="nav-logo" data-tooltip="no one made a wikipedia page yet">Raahul Nallasamy</h2>
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+        <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
+        <div class="nav-links" id="navLinks">
+            <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
+            <ul>
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-item dropdown-trigger">Creating <i
+                            class="fa-solid fa-chevron-down fa-xs"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="https://github.com/raahul42/tree-tracker" target="_blank">
+                            <i class="fa-solid fa-seedling"></i> tree-tracker
+                        </a>
+                        <a href="https://www.youtube.com/c/raahul42" target="_blank">
+                            <i class="fa-brands fa-youtube"></i> YouTube Community
+                        </a>
+                        <a href="https://raahul5842.substack.com" target="_blank">
+                            <i class="fa-solid fa-pen-nib"></i> Substack
+                        </a>
+                    </div>
+                </li>
+                <li><a href="/privacy" class="nav-item">Privacy</a></li>
+                <li><a href="/now" class="nav-item">Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="header" id="home">
+        <div class="mesh-bg" id="meshBg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+
+        <div class="ink-splash"></div>
+
+        <div class="text-box">
+            <h1><span class="gradient-text">Raahul</span><span style="color: var(--accent);">.</span></h1>
+            <h2 class="typed-line">I'm <span id="typed-text"></span><span class="cursor">|</span></h2>
+            <p>Chemical engineer turned data scientist. Currently at the intersection of<br>
+                machine learning, statistics-free AI vibe coding, and figuring things out.</p>
+            <div class="hero-btns">
+                <div class="hero-btns-row">
+                    <a href="/now" class="btn btn-now">what I'm doing Now</a>
+                    <a href="/privacy" class="btn btn-privacy">tools I use for Privacy</a>
                 </div>
-            </li>
-            <li><a href="/privacy" class="nav-item">Privacy</a></li>
-            <li><a href="/now" class="nav-item">Now</a></li>
-        </ul>
-    </div>
-</nav>
-
-<section class="header" id="home">
-    <div class="mesh-bg" id="meshBg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    
-    <div class="ink-splash"></div>
-
-    <div class="text-box">
-        <h1><span class="gradient-text">Raahul.</span></h1>
-        <h2 class="typed-line">I'm <span id="typed-text"></span><span class="cursor">|</span></h2>
-        <p>Chemical engineer turned data scientist. Currently at the intersection of<br>
-        machine learning, statistics-free AI vibe coding, and figuring things out.</p>
-        <div class="hero-btns">
-            <div class="hero-btns-row">
-                <a href="/now" class="btn btn-now">what I'm doing Now</a>
-                <a href="/privacy" class="btn btn-privacy">tools I use for Privacy</a>
-            </div>
-            <a href="mailto:contact-form-only" class="btn btn-primary btn-sm">Get In Touch</a>
-        </div>
-    </div>
-
-    <button class="vadi-btn" id="vadiBtn" onclick="toggleVadi()" title="???"><svg viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg" width="20" height="25" style="display:block"><ellipse cx="12" cy="17" rx="9" ry="12" fill="rgba(28,15,0,0.06)" stroke="rgba(28,15,0,0.20)" stroke-width="0.8"/></svg></button>
-
-    <div class="scroll-down">
-        <div class="scroll-arrow"></div>
-    </div>
-</section>
-
-<section class="about" id="about">
-    <div class="ink-drop ink-drop-1"></div>
-
-    <div class="story-intro reveal">
-        <h2 class="section-title">My Story</h2>
-        <p class="story-text">
-            I started out studying Chemical Engineering at NIT Trichy - loved the labs,
-            less so the lab reports. After graduating I joined Capgemini as a
-            Senior Analyst, which taught me how tech actually works inside large organisations
-            (spoiler: a lot of Excel).
-        </p>
-        <p class="story-text">
-            That curiosity about data eventually pulled me towards PGDBA from IIM Calcutta,
-            ISI Kolkata &amp; IIT Kharagpur; a programme that sits right at the edge of
-            statistics, computing and business. These days I work on: NLP pipelines,
-            fraud models and the occasional YouTube video.
-        </p>
-    </div>
-
-    <div class="journey reveal">
-        <div class="journey-node">
-            <div class="node-marker active"></div>
-            <div class="node-content">
-                <span class="node-year">2024 – present</span>
-                <h3>Data Scientist</h3>
-                <p>——</p>
+                <a href="mailto:contact-form-only" class="btn btn-primary btn-sm">Get In Touch</a>
             </div>
         </div>
-        <div class="journey-line"></div>
-        <div class="journey-node">
-            <div class="node-marker"></div>
-            <div class="node-content">
-                <span class="node-year">2022 – 24</span>
-                <h3 style="white-space: nowrap;">IIM Calcutta</h3>
-                <p>PGDBA<br><span class="node-sub">(ISI Kolkata + IIT Kgp)</span></p>
+
+        <button class="vadi-btn" id="vadiBtn" onclick="toggleVadi()" title="???"><svg viewBox="0 0 24 30"
+                xmlns="http://www.w3.org/2000/svg" width="20" height="25" style="display:block">
+                <ellipse cx="12" cy="17" rx="9" ry="12" fill="rgba(28,15,0,0.06)" stroke="rgba(28,15,0,0.20)"
+                    stroke-width="0.8" />
+            </svg></button>
+
+        <div class="scroll-down">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="ink-drop ink-drop-1"></div>
+
+        <div class="story-intro reveal">
+            <h2 class="section-title">My Story</h2>
+            <p class="story-text">
+                I started out studying Chemical Engineering at NIT Trichy - loved the labs,
+                less so the lab reports. After graduating I joined Capgemini as a
+                Senior Analyst, which taught me how tech actually works inside large organisations
+                (spoiler: a lot of Excel).
+            </p>
+            <p class="story-text">
+                That curiosity about data eventually pulled me towards PGDBA from IIM Calcutta,
+                ISI Kolkata &amp; IIT Kharagpur; a programme that sits right at the edge of
+                statistics, computing and business. These days I work on: NLP pipelines,
+                fraud models and the occasional YouTube video.
+            </p>
+        </div>
+
+        <div class="journey reveal">
+            <div class="journey-node">
+                <div class="node-marker active"></div>
+                <div class="node-content">
+                    <span class="node-year">2024 – present</span>
+                    <h3>Data Scientist</h3>
+                    <p>——</p>
+                </div>
+            </div>
+            <div class="journey-line"></div>
+            <div class="journey-node">
+                <div class="node-marker"></div>
+                <div class="node-content">
+                    <span class="node-year">2022 – 24</span>
+                    <h3 style="white-space: nowrap;">IIM Calcutta</h3>
+                    <p>PGDBA<br><span class="node-sub">(ISI Kolkata + IIT Kgp)</span></p>
+                </div>
+            </div>
+            <div class="journey-line"></div>
+            <div class="journey-node">
+                <div class="node-marker"></div>
+                <div class="node-content">
+                    <span class="node-year">2021 – 22</span>
+                    <h3>Capgemini</h3>
+                    <p>Senior Analyst</p>
+                </div>
+            </div>
+            <div class="journey-line"></div>
+            <div class="journey-node">
+                <div class="node-marker"></div>
+                <div class="node-content">
+                    <span class="node-year">2017 – 21</span>
+                    <h3 style="white-space: nowrap;">NIT Trichy</h3>
+                    <p>Chemical Engineering</p>
+                </div>
             </div>
         </div>
-        <div class="journey-line"></div>
-        <div class="journey-node">
-            <div class="node-marker"></div>
-            <div class="node-content">
-                <span class="node-year">2021 – 22</span>
-                <h3>Capgemini</h3>
-                <p>Senior Analyst</p>
-            </div>
+
+        <div class="section-divider"></div>
+
+        <div class="ink-drop ink-drop-2"></div>
+
+        <div class="currently reveal">
+            <h2 class="section-title">What I'm Building</h2>
+            <p class="story-text center">
+                Professionally, I work on fraud prevention in financial networks;
+                building models that catch bad actors in card transaction data before
+                they do real damage. It's one of those problems where the stakes are
+                high enough that getting it right actually matters.
+            </p>
+            <p class="story-text center">
+                Outside of work, I work on things I care about; whether that's creating
+                educational content, or working on tools that contribute in some small
+                way to a healthier environment. No grand plan, just a belief that the
+                things you choose to spend time on should mean something.
+            </p>
         </div>
-        <div class="journey-line"></div>
-        <div class="journey-node">
-            <div class="node-marker"></div>
-            <div class="node-content">
-                <span class="node-year">2017 – 21</span>
-                <h3 style="white-space: nowrap;">NIT Trichy</h3>
-                <p>Chemical Engineering</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="section-divider"></div>
+    </section>
 
-    <div class="ink-drop ink-drop-2"></div>
-
-    <div class="currently reveal">
-        <h2 class="section-title">What I'm Building</h2>
-        <p class="story-text center">
-            Professionally, I work on fraud prevention in financial networks;
-            building models that catch bad actors in card transaction data before
-            they do real damage. It's one of those problems where the stakes are
-            high enough that getting it right actually matters.
-        </p>
-        <p class="story-text center">
-            Outside of work, I work on things I care about; whether that's creating
-            educational content, or working on tools that contribute in some small
-            way to a healthier environment. No grand plan, just a belief that the
-            things you choose to spend time on should mean something.
-        </p>
-    </div>
-
-</section>
-
-<section class="video-section" id="youtube">
-    <div class="about">
-        <h2 class="section-title reveal">On YouTube</h2>
-        <div class="video-container reveal">
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/sytXMgEmZbY?si=A0dkl7CzipUG3kDM"
-                        title="YouTube video player"
-                        frameborder="0"
+    <section class="video-section" id="youtube">
+        <div class="about">
+            <h2 class="section-title reveal">On YouTube</h2>
+            <div class="video-container reveal">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/sytXMgEmZbY?si=A0dkl7CzipUG3kDM"
+                        title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/hORjhwVPFhY"
-                        title="YouTube video player"
-                        frameborder="0"
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/hORjhwVPFhY" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/n8uOLAmUY9w"
-                        title="YouTube video player"
-                        frameborder="0"
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/n8uOLAmUY9w" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="footer">
-    <p>Inspired by dank memes &amp; big dreams</p>
-    <div class="icons">
-        <span class="icon-btn" data-tooltip="no funny tweets"><i class="fa-brands fa-twitter"></i></span>
-        <span class="icon-btn" data-tooltip="inactive since 2021"><i class="fa-brands fa-instagram"></i></span>
-        <a href="https://linkedin.com/in/raahul42" target="_blank" class="icon-btn" data-tooltip="might accept invite"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-    <p>Made with <i class="fa-solid fa-heart"></i> by myself <span class="claude-credit">&amp; claude</span> &copy; <span id="year"></span></p>
-</footer>
+    <footer class="footer">
+        <p>Inspired by dank memes &amp; big dreams</p>
+        <div class="icons">
+            <span class="icon-btn" data-tooltip="no funny tweets"><i class="fa-brands fa-twitter"></i></span>
+            <span class="icon-btn" data-tooltip="inactive since 2021"><i class="fa-brands fa-instagram"></i></span>
+            <a href="https://linkedin.com/in/raahul42" target="_blank" class="icon-btn"
+                data-tooltip="might accept invite"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>Made with <i class="fa-solid fa-heart"></i> by myself <span class="claude-credit">&amp; claude</span> &copy;
+            <span id="year"></span></p>
+    </footer>
 
-<script>
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            document.getElementById('loader').classList.add('hidden');
-            document.body.classList.remove('loading');
-        }, 500);
-    });
-
-    const navLinks = document.getElementById("navLinks");
-    function showMenu() { navLinks.style.right = "0"; }
-    function HideMenu() { navLinks.style.right = "-280px"; document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open')); }
-
-    document.addEventListener('click', function(e) {
-        if (navLinks.style.right === '0px' &&
-            !navLinks.contains(e.target) &&
-            !e.target.closest('.menu-icon')) {
-            HideMenu();
-        }
-    });
-
-    document.querySelectorAll('#navLinks a:not(.dropdown-trigger)').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 700) HideMenu();
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+                document.body.classList.remove('loading');
+            }, 500);
         });
-    });
 
-    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            if (window.innerWidth <= 700) {
-                e.preventDefault();
-                const parent = this.closest('.nav-dropdown');
-                parent.classList.toggle('open');
+        const navLinks = document.getElementById("navLinks");
+        function showMenu() { navLinks.style.right = "0"; }
+        function HideMenu() { navLinks.style.right = "-280px"; document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open')); }
+
+        document.addEventListener('click', function (e) {
+            if (navLinks.style.right === '0px' &&
+                !navLinks.contains(e.target) &&
+                !e.target.closest('.menu-icon')) {
+                HideMenu();
             }
         });
-    });
 
-    const navbar = document.getElementById("navbar");
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    const roles = ["a data scientist.", "a developer.", "a vibe coder.", "an occasional reader.", "the imposter. ඞ"];
-    const rolesHTML = roles.map((r, i) => i === 4 ? 'the imposter. <span style="color:#ff4757;font-size:0.85em;vertical-align:middle;line-height:1">ඞ</span>' : null);
-    let roleIndex = 0, charIndex = 0, isDeleting = false;
-    const typedEl = document.getElementById('typed-text');
-
-    function typeWriter() {
-        const current = roles[roleIndex];
-        const fullyTyped = !isDeleting && charIndex === current.length;
-
-        if (fullyTyped && rolesHTML[roleIndex]) {
-            typedEl.innerHTML = rolesHTML[roleIndex];
-        } else {
-            typedEl.textContent = isDeleting
-                ? current.substring(0, --charIndex)
-                : current.substring(0, ++charIndex);
-        }
-
-        let speed = isDeleting ? 50 : 100;
-        if (fullyTyped) {
-            speed = 2000; isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            speed = 400;
-        }
-        setTimeout(typeWriter, speed);
-    }
-    typeWriter();
-
-    let vadiMode = false;
-    function toggleVadi() {
-        const header = document.querySelector('.header');
-        const meshBg = document.getElementById('meshBg');
-        const btn = document.getElementById('vadiBtn');
-        vadiMode = !vadiMode;
-        if (vadiMode) {
-            header.classList.add('vadi-active');
-            meshBg.style.display = "none";
-            btn.classList.add('active');
-        } else {
-            header.classList.remove('vadi-active');
-            meshBg.style.display = "block";
-            btn.classList.remove('active');
-        }
-    }
-
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+        document.querySelectorAll('#navLinks a:not(.dropdown-trigger)').forEach(link => {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 700) HideMenu();
+            });
         });
-    }, { threshold: 0.1 });
-    revealEls.forEach(el => observer.observe(el));
 
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-item');
-    const sectionObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navItems.forEach(a => {
-                    a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
-                });
-            }
+        document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function (e) {
+                if (window.innerWidth <= 700) {
+                    e.preventDefault();
+                    const parent = this.closest('.nav-dropdown');
+                    parent.classList.toggle('open');
+                }
+            });
         });
-    }, { threshold: 0.4 });
-    sections.forEach(s => sectionObs.observe(s));
 
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') applyTheme('light');
+        const navbar = document.getElementById("navbar");
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
 
-    function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        document.getElementById('themeIcon').className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-        localStorage.setItem('theme', theme);
-    }
+        const roles = ["a data scientist", "a developer", "a vibe coder", "an occasional reader", "the imposter ඞ"];
+        const rolesHTML = roles.map((r, i) => i === 4 ? 'the imposter <span style="color:#ff4757;font-size:0.85em;vertical-align:middle;line-height:1">ඞ</span>' : null);
+        let roleIndex = 0, charIndex = 0, isDeleting = false;
+        const typedEl = document.getElementById('typed-text');
 
-    function toggleTheme() {
-        const current = document.documentElement.getAttribute('data-theme') || 'dark';
-        applyTheme(current === 'dark' ? 'light' : 'dark');
-    }
+        function typeWriter() {
+            const current = roles[roleIndex];
+            const fullyTyped = !isDeleting && charIndex === current.length;
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+            if (fullyTyped && rolesHTML[roleIndex]) {
+                typedEl.innerHTML = rolesHTML[roleIndex];
+            } else {
+                typedEl.textContent = isDeleting
+                    ? current.substring(0, --charIndex)
+                    : current.substring(0, ++charIndex);
+            }
+
+            let speed = isDeleting ? 50 : 100;
+            if (fullyTyped) {
+                speed = 2000; isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                speed = 400;
+            }
+            setTimeout(typeWriter, speed);
+        }
+        typeWriter();
+
+        let vadiMode = false;
+        function toggleVadi() {
+            const header = document.querySelector('.header');
+            const meshBg = document.getElementById('meshBg');
+            const btn = document.getElementById('vadiBtn');
+            vadiMode = !vadiMode;
+            if (vadiMode) {
+                header.classList.add('vadi-active');
+                meshBg.style.display = "none";
+                btn.classList.add('active');
+            } else {
+                header.classList.remove('vadi-active');
+                meshBg.style.display = "block";
+                btn.classList.remove('active');
+            }
+        }
+
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => observer.observe(el));
+
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+        const sectionObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navItems.forEach(a => {
+                        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+        sections.forEach(s => sectionObs.observe(s));
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') applyTheme('light');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.getElementById('themeIcon').className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+            localStorage.setItem('theme', theme);
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        }
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>

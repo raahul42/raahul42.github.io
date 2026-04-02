@@ -8,9 +8,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../retro.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <style>
@@ -18,6 +19,7 @@
             max-width: 620px;
             margin: 0 auto;
             padding: 140px 24px 120px;
+            position: relative;
         }
 
         .now-header {
@@ -25,9 +27,11 @@
         }
 
         .now-header h1 {
-            font-size: clamp(52px, 8vw, 80px);
-            font-weight: 800;
-            letter-spacing: -3px;
+            font-family: 'IM Fell English', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(68px, 12vw, 120px);
+            font-weight: 400;
+            letter-spacing: 0;
             line-height: 1;
             margin-bottom: 20px;
         }
@@ -57,10 +61,19 @@
             border-bottom: 1px solid var(--card-border);
         }
 
+        .now-meta {
+            font-family: 'Crimson Text', serif;
+            font-size: 15px;
+            color: var(--accent);
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
         .now-label {
-            font-size: 10px;
+            font-family: 'Special Elite', monospace;
+            font-size: 13px;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent);
             margin-bottom: 20px;
@@ -76,9 +89,9 @@
         }
 
         .now-item-title {
-            font-family: 'Lora', Georgia, serif;
-            font-size: 20px;
-            font-weight: 600;
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 26px;
+            font-weight: 400;
             color: var(--text);
             line-height: 1.3;
             margin-bottom: 4px;
@@ -86,20 +99,21 @@
 
         .now-item-title em {
             font-style: italic;
-            font-weight: 400;
+            color: var(--text);
         }
 
         .now-item-sub {
-            font-size: 13px;
+            font-family: 'Crimson Text', serif;
+            font-size: 15px;
             color: var(--text-muted);
             margin-bottom: 8px;
         }
 
         .now-item-note {
-            font-size: 14px;
-            color: var(--text-muted);
+            font-family: 'Crimson Text', serif;
+            font-size: 17px;
             line-height: 1.7;
-            opacity: 0.8;
+            color: var(--text-muted);
         }
 
         .now-tags {
@@ -130,6 +144,26 @@
             color: inherit;
             text-decoration: underline;
             text-underline-offset: 3px;
+        }
+
+        .ink-drop-now {
+            width: 35vw;
+            height: 35vw;
+            max-width: 350px;
+            max-height: 350px;
+            min-width: 150px;
+            min-height: 150px;
+            top: 8%;
+            right: -20%;
+            transform: rotate(-15deg);
+        }
+
+        @media (max-width: 700px) {
+            .ink-drop-now {
+                top: 5%;
+                right: -25%;
+                opacity: 0.3;
+            }
         }
     </style>
 </head>
@@ -167,9 +201,10 @@
 </nav>
 
 <main class="now-wrap">
+    <div class="ink-drop ink-drop-now"></div>
 
     <header class="now-header">
-        <h1><span class="gradient-text">now.</span></h1>
+        <h1><span class="gradient-text">now</span><span style="color: var(--accent);">.</span></h1>
         <div class="now-meta">
             <span class="now-meta-dot"></span>
             <span>last updated March 2026</span>

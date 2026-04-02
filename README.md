@@ -20,4 +20,4 @@ Analytics via [GoatCounter](https://www.goatcounter.com/) - privacy-friendly, no
 
 ## How it was built
 
-Started with a rough brief, then iterated with [Claude](https://claude.ai/claude-code) - the redesign, the CSS theming system (dark/light mode with a warm cream palette for light), and all the small details like the nav tooltips and mobile card layout.
+Started with a rough brief, then iterated with [Claude](https://claude.ai/claude-code) and Antigravity - the redesign, the CSS theming system (dark/light mode with a warm cream palette for light), and all the small details like the nav tooltips and mobile card layout.

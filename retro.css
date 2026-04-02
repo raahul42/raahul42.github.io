@@ -4,12 +4,11 @@
    print design. Overrides style.css completely.
    =================================================== */
 
-/* ---- VARIABLES — lock retro palette regardless of data-theme ---- */
-html,
-html[data-theme="dark"],
+/* ---- VARIABLES — light mode: paper palette ---- */
+:root,
 html[data-theme="light"] {
-    --bg:               #f5f0e1;
-    --bg-surface:       #ece7d3;
+    --bg:               #eddfc4;
+    --bg-surface:       #e3d0b0;
     --text:             #1c0f00;
     --text-muted:       #6b4c2a;
     --accent:           #8b1a1a;
@@ -18,6 +17,20 @@ html[data-theme="light"] {
     --card-border:      rgba(28, 15, 0, 0.16);
     --card-border-hover:rgba(28, 15, 0, 0.36);
     --gradient:         linear-gradient(135deg, #8b1a1a, #5c4a1e);
+}
+
+/* ---- VARIABLES — dark mode: ink & sepia palette ---- */
+html[data-theme="dark"] {
+    --bg:               #1c1409;
+    --bg-surface:       #251b0e;
+    --text:             #e8dfc8;
+    --text-muted:       #a89070;
+    --accent:           #c47a2c;
+    --accent-2:         #8b6914;
+    --card-bg:          rgba(232, 223, 200, 0.04);
+    --card-border:      rgba(232, 223, 200, 0.12);
+    --card-border-hover:rgba(232, 223, 200, 0.25);
+    --gradient:         linear-gradient(135deg, #c47a2c, #8b6914);
 }
 
 /* ---- PAPER GRAIN OVERLAY ---- */
@@ -58,20 +71,22 @@ html[data-theme="light"] body {
 }
 
 #navbar.scrolled {
-    background: rgba(245, 240, 225, 0.96);
+    background: rgba(237, 223, 196, 0.96);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid var(--card-border);
     box-shadow: 0 2px 12px rgba(28, 15, 0, 0.07);
 }
 
-html[data-theme="light"] #navbar.scrolled {
-    background: rgba(245, 240, 225, 0.96);
+html[data-theme="light"] #navbar.scrolled,
+html:not([data-theme]) #navbar.scrolled {
+    background: rgba(237, 223, 196, 0.96);
 }
 
-html[data-theme="light"] .nav-links {
-    background: rgba(245, 240, 225, 0.97) !important;
+html[data-theme="dark"] #navbar.scrolled {
+    background: rgba(28, 20, 9, 0.96);
 }
+
 
 .nav-logo {
     font-family: 'IM Fell English', Georgia, serif;
@@ -82,10 +97,11 @@ html[data-theme="light"] .nav-links {
 }
 
 .nav-logo::after {
-    background: rgba(245, 240, 225, 0.97);
+    background: rgba(237, 223, 196, 0.97);
     backdrop-filter: none;
     border: 1px solid var(--card-border);
     border-radius: 3px;
+    font-style: normal;
 }
 
 .nav-item {
@@ -101,13 +117,17 @@ html[data-theme="light"] .nav-links {
     border-radius: 0;
 }
 
-/* Hide the theme toggle — retro prototype is always paper */
+/* Theme toggle — just the icon, no box */
 .theme-toggle {
-    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .dropdown-menu {
-    background: rgba(245, 240, 225, 0.98);
+    background: rgba(237, 223, 196, 0.98);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-radius: 3px;
@@ -115,8 +135,13 @@ html[data-theme="light"] .nav-links {
     box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.08);
 }
 
-html[data-theme="light"] .dropdown-menu {
-    background: rgba(245, 240, 225, 0.98);
+html[data-theme="light"] .dropdown-menu,
+html:not([data-theme]) .dropdown-menu {
+    background: rgba(237, 223, 196, 0.98);
+}
+
+html[data-theme="dark"] .dropdown-menu {
+    background: rgba(37, 27, 14, 0.98);
 }
 
 .dropdown-menu a {
@@ -128,10 +153,13 @@ html[data-theme="light"] .dropdown-menu {
 /* Mobile nav panel */
 @media (max-width: 700px) {
     .nav-links {
-        background: rgba(245, 240, 225, 0.97) !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         border-left: 1px solid var(--card-border);
+        background: rgba(237, 223, 196, 0.97) !important;
+    }
+    html[data-theme="dark"] .nav-links {
+        background: rgba(28, 20, 9, 0.97) !important;
     }
 }
 
@@ -209,6 +237,7 @@ html[data-theme="light"] .header.vadi-active {
     background: var(--text);
     color: var(--bg);
     box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.25);
+    margin-top: 14px;
 }
 
 .btn-primary:hover {
@@ -220,8 +249,8 @@ html[data-theme="light"] .header.vadi-active {
 .btn-privacy {
     background: transparent;
     color: var(--text);
-    border: 1.5px solid rgba(28, 15, 0, 0.3);
-    box-shadow: 2px 2px 0 rgba(28, 15, 0, 0.1);
+    border: 1.5px solid var(--card-border-hover);
+    box-shadow: 2px 2px 0 var(--card-bg);
 }
 
 .btn-now:hover,
@@ -229,15 +258,19 @@ html[data-theme="light"] .header.vadi-active {
     background: var(--text);
     color: var(--bg);
     transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.2);
+    box-shadow: 3px 3px 0 var(--card-border);
 }
 
 /* ---- VADI EASTER EGG BTN ---- */
 .vadi-btn {
+    -webkit-appearance: none;
+    appearance: none;
     backdrop-filter: none;
-    border-radius: 2px;
-    border: 1px solid var(--card-border);
-    background: var(--bg);
+    -webkit-backdrop-filter: none;
+    border: none;
+    background: transparent;
+    width: 28px;
+    height: 28px;
 }
 
 /* ---- SCROLL ARROW ---- */
@@ -352,14 +385,13 @@ html[data-theme="light"] .header.vadi-active {
 
 .icon-btn {
     background: transparent;
-    border: 1px solid var(--card-border);
-    border-radius: 2px;
+    border: none;
     color: var(--text-muted);
     backdrop-filter: none;
 }
 
 .icon-btn::after {
-    background: rgba(245, 240, 225, 0.97);
+    background: rgba(237, 223, 196, 0.97);
     backdrop-filter: none;
     border: 1px solid var(--card-border);
     border-radius: 3px;
@@ -368,7 +400,7 @@ html[data-theme="light"] .header.vadi-active {
 
 html[data-theme="light"] .icon-btn::after,
 html[data-theme="light"] .nav-logo::after {
-    background: rgba(245, 240, 225, 0.97);
+    background: rgba(237, 223, 196, 0.97);
 }
 
 .icon-btn:hover {

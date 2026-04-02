@@ -7,8 +7,8 @@
 /* ---- VARIABLES — light mode: paper palette ---- */
 :root,
 html[data-theme="light"] {
-    --bg:               #eddfc4;
-    --bg-surface:       #e3d0b0;
+    --bg:               #ddb882;
+    --bg-surface:       #cfa06e;
     --text:             #1c0f00;
     --text-muted:       #6b4c2a;
     --accent:           #8b1a1a;
@@ -33,6 +33,7 @@ html[data-theme="dark"] {
     --gradient:         linear-gradient(135deg, #c47a2c, #8b6914);
 }
 
+
 /* ---- PAPER GRAIN OVERLAY ---- */
 body::after {
     content: '';
@@ -50,8 +51,16 @@ html {
     background: var(--bg);
 }
 
-html[data-theme="light"] body {
-    background: var(--bg);
+html[data-theme="light"] body,
+html:not([data-theme]) body {
+    background-color: var(--bg);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cpath d='M 60,100 C 40,60 65,25 105,40 C 145,55 165,25 182,60 C 199,95 182,128 150,134 C 118,140 106,158 78,140 C 50,122 80,140 60,100Z' fill='rgba(15,5,0,0.11)'/%3E%3Cpath d='M 88,136 Q 84,168 88,188' stroke='rgba(15,5,0,0.09)' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='186' cy='56' r='4.5' fill='rgba(15,5,0,0.09)'/%3E%3Ccircle cx='197' cy='44' r='2.2' fill='rgba(15,5,0,0.07)'/%3E%3Ccircle cx='53' cy='80' r='3' fill='rgba(15,5,0,0.08)'/%3E%3Ccircle cx='45' cy='94' r='1.8' fill='rgba(15,5,0,0.07)'/%3E%3Ccircle cx='154' cy='140' r='2.5' fill='rgba(15,5,0,0.08)'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cpath d='M 295,230 C 275,200 296,172 326,182 C 356,192 368,168 382,198 C 396,228 382,252 358,257 C 334,262 322,274 300,260 C 278,246 315,256 295,230Z' fill='rgba(15,5,0,0.09)'/%3E%3Cpath d='M 304,258 Q 302,278 304,292' stroke='rgba(15,5,0,0.07)' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='385' cy='195' r='3.5' fill='rgba(15,5,0,0.08)'/%3E%3Ccircle cx='393' cy='185' r='1.8' fill='rgba(15,5,0,0.06)'/%3E%3Ccircle cx='288' cy='218' r='2.2' fill='rgba(15,5,0,0.07)'/%3E%3C/svg%3E"),
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: scroll, scroll;
+    background-position: -2% 120px, right bottom;
+    background-size: 28% auto, 22% auto;
     min-height: 100vh;
 }
 
@@ -71,7 +80,7 @@ html[data-theme="light"] body {
 }
 
 #navbar.scrolled {
-    background: rgba(237, 223, 196, 0.96);
+    background: rgba(221, 184, 130, 0.96);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid var(--card-border);
@@ -80,7 +89,7 @@ html[data-theme="light"] body {
 
 html[data-theme="light"] #navbar.scrolled,
 html:not([data-theme]) #navbar.scrolled {
-    background: rgba(237, 223, 196, 0.96);
+    background: rgba(221, 184, 130, 0.96);
 }
 
 html[data-theme="dark"] #navbar.scrolled {
@@ -97,7 +106,7 @@ html[data-theme="dark"] #navbar.scrolled {
 }
 
 .nav-logo::after {
-    background: rgba(237, 223, 196, 0.97);
+    background: rgba(221, 184, 130, 0.97);
     backdrop-filter: none;
     border: 1px solid var(--card-border);
     border-radius: 3px;
@@ -127,7 +136,7 @@ html[data-theme="dark"] #navbar.scrolled {
 }
 
 .dropdown-menu {
-    background: rgba(237, 223, 196, 0.98);
+    background: rgba(221, 184, 130, 0.98);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-radius: 3px;
@@ -137,7 +146,7 @@ html[data-theme="dark"] #navbar.scrolled {
 
 html[data-theme="light"] .dropdown-menu,
 html:not([data-theme]) .dropdown-menu {
-    background: rgba(237, 223, 196, 0.98);
+    background: rgba(221, 184, 130, 0.98);
 }
 
 html[data-theme="dark"] .dropdown-menu {
@@ -156,7 +165,7 @@ html[data-theme="dark"] .dropdown-menu {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         border-left: 1px solid var(--card-border);
-        background: rgba(237, 223, 196, 0.97) !important;
+        background: rgba(221, 184, 130, 0.97) !important;
     }
     html[data-theme="dark"] .nav-links {
         background: rgba(28, 20, 9, 0.97) !important;
@@ -166,17 +175,17 @@ html[data-theme="dark"] .dropdown-menu {
 /* ---- HERO SECTION ---- */
 .header {
     background: var(--bg);
-    background-image: radial-gradient(ellipse at center, transparent 55%, rgba(28, 15, 0, 0.07) 100%);
+    background-image: radial-gradient(ellipse at center, transparent 50%, rgba(28, 15, 0, 0.13) 100%);
 }
 
 html[data-theme="light"] .header {
     background: var(--bg);
-    background-image: radial-gradient(ellipse at center, transparent 55%, rgba(28, 15, 0, 0.07) 100%);
+    background-image: radial-gradient(ellipse at center, transparent 50%, rgba(28, 15, 0, 0.13) 100%);
 }
 
 .header.vadi-active {
     background-image:
-        linear-gradient(rgba(245, 240, 225, 0.75), rgba(245, 240, 225, 0.92)),
+        linear-gradient(rgba(221, 184, 130, 0.72), rgba(221, 184, 130, 0.88)),
         url('images/vadivelu.png');
     background-size: cover;
     background-position: center;
@@ -184,7 +193,7 @@ html[data-theme="light"] .header {
 
 html[data-theme="light"] .header.vadi-active {
     background-image:
-        linear-gradient(rgba(245, 240, 225, 0.75), rgba(245, 240, 225, 0.92)),
+        linear-gradient(rgba(221, 184, 130, 0.72), rgba(221, 184, 130, 0.88)),
         url('images/vadivelu.png');
 }
 
@@ -366,7 +375,7 @@ html[data-theme="light"] .header.vadi-active {
 }
 
 /* ---- VIDEO SECTION ---- */
-.video-container {
+.video-item {
     border-radius: 3px;
     border: 1px solid var(--card-border);
     box-shadow: 5px 5px 0 rgba(28, 15, 0, 0.09);
@@ -391,7 +400,7 @@ html[data-theme="light"] .header.vadi-active {
 }
 
 .icon-btn::after {
-    background: rgba(237, 223, 196, 0.97);
+    background: rgba(221, 184, 130, 0.97);
     backdrop-filter: none;
     border: 1px solid var(--card-border);
     border-radius: 3px;
@@ -400,7 +409,7 @@ html[data-theme="light"] .header.vadi-active {
 
 html[data-theme="light"] .icon-btn::after,
 html[data-theme="light"] .nav-logo::after {
-    background: rgba(237, 223, 196, 0.97);
+    background: rgba(221, 184, 130, 0.97);
 }
 
 .icon-btn:hover {

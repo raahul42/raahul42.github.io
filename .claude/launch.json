@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"static","runtimeExecutable":"/opt/homebrew/bin/python3.12","runtimeArgs":["-m","http.server","8766","--directory","/Users/raahul/Desktop/Projects/raahul42.github.io"],"port":8766}]}

@@ -78,12 +78,15 @@ html {
     background: var(--bg);
     color: var(--text);
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
 body {
     overflow-x: hidden;
     opacity: 1;
     transition: opacity 0.5s ease;
+    position: relative;
+    width: 100%;
 }
 
 body.loading {
@@ -91,7 +94,7 @@ body.loading {
 }
 
 section[id] {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 50px;
 }
 
 .page-loader {

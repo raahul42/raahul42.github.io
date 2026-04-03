@@ -303,7 +303,7 @@
     });
 
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') applyTheme('light');
+    applyTheme(savedTheme);
 
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);

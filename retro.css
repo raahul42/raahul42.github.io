@@ -502,7 +502,7 @@ html[data-theme="light"] .nav-logo::after {
     border-top-color: var(--accent);
 }
 
-/* ---- INK SPLASH ---- */
+/* ---- INK SPLASH — decorative PNG blob, top-right of hero ---- */
 .ink-splash {
     position: absolute;
     width: 45vw;
@@ -543,7 +543,7 @@ html[data-theme="dark"] .ink-splash {
     }
 }
 
-/* ---- SMALL INK DROPS ---- */
+/* ---- SMALL INK DROPS — two accent blobs inside the about section ---- */
 section#about {
     position: relative;
 }

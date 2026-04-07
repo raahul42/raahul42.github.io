@@ -543,6 +543,15 @@ section[id] {
     box-shadow: 0 14px 30px rgba(56, 189, 248, 0.3);
 }
 
+.btn-youtube .fa-youtube {
+    color: #ff0000;
+}
+
+.btn-youtube:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(255, 0, 0, 0.25);
+}
+
 .btn-secondary {
     background: var(--card-bg);
     color: var(--text);

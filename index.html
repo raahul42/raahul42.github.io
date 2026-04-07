@@ -5,7 +5,30 @@
     <title>Raahul Nallasamy</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <meta name="description" content="Raahul Nallasamy — Data Scientist & ML Engineer" />
+    <meta name="description" content="Chemical engineer turned data scientist. Working on fraud detection, NLP, and the occasional YouTube video." />
+    <meta name="keywords" content="fraud detection, machine learning, data scientist, NLP, Python, Raahul Nallasamy" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://raahul42.github.io" />
+    <meta property="og:title" content="Raahul Nallasamy" />
+    <meta property="og:description" content="Chemical engineer turned data scientist. Working on fraud detection, NLP, and the occasional YouTube video." />
+
+    <!-- Schema.org Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Raahul Nallasamy",
+      "jobTitle": "Data Scientist",
+      "url": "https://raahul42.github.io",
+      "sameAs": [
+        "https://linkedin.com/in/raahul42",
+        "https://www.youtube.com/c/raahul42"
+      ]
+    }
+    </script>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,14 +49,14 @@
         <div class="loader-spinner"></div>
     </div>
 
-    <nav id="navbar">
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
         <h2 class="nav-logo" data-tooltip="no one made a wikipedia page yet">Raahul Nallasamy</h2>
-        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle colour theme">
             <i class="fa-solid fa-moon" id="themeIcon"></i>
         </button>
-        <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
+        <i class="fa-solid fa-bars menu-icon" onclick="showMenu()" aria-label="Open menu" role="button"></i>
         <div class="nav-links" id="navLinks">
-            <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()"></i>
+            <i class="fa-solid fa-xmark close-icon" onclick="HideMenu()" aria-label="Close menu" role="button"></i>
             <ul>
                 <li><a href="#home" class="nav-item">Home</a></li>
                 <li><a href="#about" class="nav-item">About</a></li>
@@ -44,11 +67,8 @@
                         <a href="/tree-tracker/">
                             <i class="fa-solid fa-seedling"></i> Tree Journal
                         </a>
-                        <a href="https://www.youtube.com/c/raahul42" target="_blank">
+                        <a href="https://www.youtube.com/c/raahul42" target="_blank" rel="noopener">
                             <i class="fa-brands fa-youtube"></i> YouTube Community
-                        </a>
-                        <a href="https://raahul5842.substack.com" target="_blank">
-                            <i class="fa-solid fa-pen-nib"></i> Substack
                         </a>
                     </div>
                 </li>
@@ -58,7 +78,7 @@
         </div>
     </nav>
 
-    <section class="header" id="home">
+    <section class="header" id="home" aria-label="Hero">
         <div class="mesh-bg" id="meshBg">
             <div class="orb orb-1"></div>
             <div class="orb orb-2"></div>
@@ -71,13 +91,16 @@
             <h1><span class="gradient-text">Raahul</span><span style="color: var(--accent);">.</span></h1>
             <h2 class="typed-line">I'm <span id="typed-text"></span><span class="cursor">|</span></h2>
             <p>Chemical engineer turned data scientist. Currently at the intersection of<br>
-                machine learning, statistics-free AI vibe coding, and figuring things out.</p>
+                machine learning, AI vibe coding, and figuring things out.</p>
             <div class="hero-btns">
                 <div class="hero-btns-row">
+                    <a href="mailto:contact-form-only" class="btn btn-primary">Get In Touch</a>
+                    <a href="https://www.youtube.com/c/raahul42?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fa-brands fa-youtube"></i> on YouTube</a>
+                </div>
+                <div class="hero-btns-row hero-btns-row--secondary">
                     <a href="/now" class="btn btn-now">what I'm doing Now</a>
                     <a href="/privacy" class="btn btn-privacy">tools I use for Privacy</a>
                 </div>
-                <a href="mailto:contact-form-only" class="btn btn-primary btn-sm">Get In Touch</a>
             </div>
         </div>
 
@@ -92,7 +115,8 @@
         </div>
     </section>
 
-    <section class="about" id="about">
+    <main>
+    <section class="about" id="about" aria-label="About">
         <div class="ink-drop ink-drop-1"></div>
 
         <div class="story-intro reveal">
@@ -171,7 +195,7 @@
 
     </section>
 
-    <section class="video-section" id="youtube">
+    <section class="video-section" id="youtube" aria-label="YouTube videos">
         <div class="about">
             <h2 class="section-title reveal">On YouTube</h2>
             <div class="video-container reveal">
@@ -195,6 +219,7 @@
         </div>
     </section>
 
+    </main>
     <footer class="footer">
         <p>Inspired by dank memes &amp; big dreams</p>
         <div class="icons">

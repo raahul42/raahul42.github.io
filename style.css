@@ -97,6 +97,17 @@ section[id] {
     scroll-margin-top: 50px;
 }
 
+/* Keyboard focus styles */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.btn:focus-visible {
+    outline-offset: 4px;
+}
+
 .page-loader {
     position: fixed;
     inset: 0;

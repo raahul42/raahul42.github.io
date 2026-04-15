@@ -133,6 +133,41 @@
             line-height: 1;
         }
 
+        .reading-toggle-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .reading-toggle-header:hover .reading-toggle-arrow {
+            opacity: 0.8;
+        }
+
+        .reading-toggle-arrow {
+            font-size: 18px;
+            color: var(--accent);
+            opacity: 0.35;
+            transition: transform 0.25s ease, opacity 0.2s ease;
+            line-height: 1;
+            transform: rotate(0deg);
+        }
+
+        .reading-toggle-arrow.flipped {
+            transform: rotate(180deg);
+        }
+
+        .reading-view {
+            animation: fadeInReading 0.2s ease;
+        }
+
+        @keyframes fadeInReading {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .now-footer-note {
             margin-top: 48px;
             font-size: 12px;
@@ -206,16 +241,28 @@
         <h1><span class="gradient-text">now</span><span style="color: var(--accent);">.</span></h1>
         <div class="now-meta">
             <span class="now-meta-dot"></span>
-            <span>last updated March 2026</span>
+            <span>last updated April 2026</span>
         </div>
     </header>
 
     <div class="now-section">
-        <span class="now-label">Reading</span>
-        <div class="now-item">
+        <div class="reading-toggle-header" onclick="toggleReading()">
+            <span class="now-label" style="margin-bottom:0;">
+                <span id="reading-label">Reading</span>
+            </span>
+            <span class="reading-toggle-arrow" id="reading-arrow">&#8250;</span>
+        </div>
+
+        <div class="now-item reading-view" id="reading-current">
+            <div class="now-item-title"><em>Exit West</em></div>
+            <div class="now-item-sub">Mohsin Hamid</div>
+            <div class="now-item-note">A sweet romance budding in a city under war</div>
+        </div>
+
+        <div class="now-item reading-view" id="reading-last" style="display:none;">
             <div class="now-item-title"><em>The Doctor vs The Saint</em></div>
             <div class="now-item-sub">Arundhati Roy</div>
-            <div class="now-item-note">It is the foreword written by A. Roy for Ambedkar's Annihilation of Caste. An eye opener for naive gandhians</div>
+            <div class="now-item-note">Foreword written by A. Roy for Ambedkar's Annihilation of Caste. An eye opener for naive gandhians</div>
         </div>
     </div>
 
@@ -315,6 +362,15 @@
     }
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    let readingShowingLast = false;
+    function toggleReading() {
+        readingShowingLast = !readingShowingLast;
+        document.getElementById('reading-current').style.display = readingShowingLast ? 'none' : 'block';
+        document.getElementById('reading-last').style.display = readingShowingLast ? 'block' : 'none';
+        document.getElementById('reading-label').textContent = readingShowingLast ? 'Last Read' : 'Reading';
+        document.getElementById('reading-arrow').classList.toggle('flipped', readingShowingLast);
+    }
 </script>
 </body>
 </html>

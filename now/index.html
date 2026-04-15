@@ -142,17 +142,24 @@
             width: fit-content;
         }
 
+        .reading-toggle-header .now-label {
+            display: inline;
+            margin-bottom: 0;
+        }
+
         .reading-toggle-header:hover .reading-toggle-arrow {
-            opacity: 0.8;
+            opacity: 1;
         }
 
         .reading-toggle-arrow {
-            font-size: 18px;
+            font-size: 14px;
             color: var(--accent);
-            opacity: 0.35;
+            opacity: 0.75;
             transition: transform 0.25s ease, opacity 0.2s ease;
             line-height: 1;
             transform: rotate(0deg);
+            display: flex;
+            align-items: center;
         }
 
         .reading-toggle-arrow.flipped {

@@ -152,15 +152,14 @@
         }
 
         .reading-toggle-arrow {
-            font-size: 14px;
+            font-size: 11px;
             color: var(--accent);
-            opacity: 0.75;
+            opacity: 0.85;
             transition: transform 0.25s ease, opacity 0.2s ease;
-            line-height: 1;
             transform: rotate(0deg);
             display: flex;
             align-items: center;
-            margin-top: -2px;
+            justify-content: center;
         }
 
         .reading-toggle-arrow.flipped {
@@ -258,7 +257,7 @@
             <span class="now-label" style="margin-bottom:0;">
                 <span id="reading-label">Reading</span>
             </span>
-            <span class="reading-toggle-arrow" id="reading-arrow">&#8250;</span>
+            <span class="reading-toggle-arrow" id="reading-arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
         <div class="now-item reading-view" id="reading-current">
@@ -296,7 +295,7 @@
             <span class="now-label" style="margin-bottom:0;">
                 <span id="fascinated-label">Fascinated by</span>
             </span>
-            <span class="reading-toggle-arrow" id="fascinated-arrow">&#8250;</span>
+            <span class="reading-toggle-arrow" id="fascinated-arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
         <div id="fascinated-current">

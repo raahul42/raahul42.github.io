@@ -41,6 +41,151 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <script data-goatcounter="https://raahul42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <style>
+        .contact-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(3px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .contact-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .contact-modal {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            width: 100%;
+            max-width: 460px;
+            padding: 40px 40px 36px;
+            position: relative;
+            transform: translateY(16px);
+            transition: transform 0.25s ease;
+        }
+
+        .contact-overlay.active .contact-modal {
+            transform: translateY(0);
+        }
+
+        .contact-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px;
+            opacity: 0.6;
+            transition: opacity 0.15s;
+        }
+
+        .contact-close:hover { opacity: 1; }
+
+        .contact-modal-title {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 28px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 28px;
+        }
+
+        .contact-field {
+            margin-bottom: 22px;
+        }
+
+        .contact-field label {
+            display: block;
+            font-family: 'Special Elite', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .contact-field input,
+        .contact-field textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--card-border);
+            padding: 6px 0 8px;
+            font-family: 'Crimson Text', serif;
+            font-size: 18px;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        .contact-field input:focus,
+        .contact-field textarea:focus {
+            border-bottom-color: var(--accent);
+        }
+
+        .contact-field textarea {
+            min-height: 80px;
+            line-height: 1.6;
+        }
+
+        .contact-submit {
+            margin-top: 8px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .contact-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .contact-success {
+            text-align: center;
+            padding: 16px 0 8px;
+        }
+
+        .contact-success-title {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .contact-success-note {
+            font-family: 'Crimson Text', serif;
+            font-size: 17px;
+            color: var(--text-muted);
+        }
+
+        .contact-error {
+            font-family: 'Crimson Text', serif;
+            font-size: 15px;
+            color: #c0392b;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        @media (max-width: 500px) {
+            .contact-modal { padding: 32px 24px 28px; }
+        }
+    </style>
 </head>
 
 <body class="loading">
@@ -94,7 +239,7 @@
                 machine learning, AI vibe coding, and figuring things out.</p>
             <div class="hero-btns">
                 <div class="hero-btns-row">
-                    <a href="mailto:contact-form-only" class="btn btn-primary">Get In Touch</a>
+                    <a href="#" class="btn btn-primary" onclick="openContactModal(); return false;">Get In Touch</a>
                     <a href="https://www.youtube.com/c/raahul42?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-primary btn-youtube"><i class="fa-brands fa-youtube"></i> on YouTube</a>
                 </div>
                 <div class="hero-btns-row hero-btns-row--secondary">
@@ -220,6 +365,35 @@
     </section>
 
     </main>
+    <div class="contact-overlay" id="contactOverlay" onclick="overlayClickClose(event)">
+        <div class="contact-modal">
+            <button class="contact-close" onclick="closeContactModal()" aria-label="Close">&times;</button>
+            <div id="contactFormWrap">
+                <p class="contact-modal-title">say hello.</p>
+                <form id="contactForm" onsubmit="submitContact(event)">
+                    <div class="contact-field">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" autocomplete="email">
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-msg">What do you wish to say</label>
+                        <textarea id="contact-msg" name="message" rows="4" required></textarea>
+                    </div>
+                    <p class="contact-error" id="contactError">Something went wrong. Try again.</p>
+                    <button type="submit" class="btn btn-primary contact-submit" id="contactSubmit">Send</button>
+                </form>
+            </div>
+            <div class="contact-success" id="contactSuccess" style="display:none;">
+                <p class="contact-success-title">message sent.</p>
+                <p class="contact-success-note">I'll get back to you soon.</p>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>Inspired by dank memes &amp; big dreams</p>
         <div class="icons">
@@ -357,6 +531,58 @@
         }
 
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        function openContactModal() {
+            document.getElementById('contactOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function overlayClickClose(e) {
+            if (e.target === document.getElementById('contactOverlay')) closeContactModal();
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeContactModal();
+        });
+
+        async function submitContact(e) {
+            e.preventDefault();
+            const btn = document.getElementById('contactSubmit');
+            const errEl = document.getElementById('contactError');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            errEl.style.display = 'none';
+
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        access_key: '317c881d-d713-4ef2-b51f-5bfba723aceb',
+                        subject: 'Message from raahul42.github.io',
+                        name: document.getElementById('contact-name').value,
+                        email: document.getElementById('contact-email').value,
+                        message: document.getElementById('contact-msg').value
+                    })
+                });
+                const result = await res.json();
+                if (result.success) {
+                    document.getElementById('contactFormWrap').style.display = 'none';
+                    document.getElementById('contactSuccess').style.display = 'block';
+                } else {
+                    throw new Error();
+                }
+            } catch {
+                errEl.style.display = 'block';
+                btn.textContent = 'Send';
+                btn.disabled = false;
+            }
+        }
     </script>
 
 </body>

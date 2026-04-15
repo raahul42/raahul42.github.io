@@ -47,7 +47,7 @@
             inset: 0;
             background: rgba(0, 0, 0, 0.55);
             backdrop-filter: blur(3px);
-            z-index: 1000;
+            z-index: 9998;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -63,7 +63,7 @@
         }
 
         .contact-modal {
-            background: var(--card-bg);
+            background: var(--bg);
             border: 1px solid var(--card-border);
             width: 100%;
             max-width: 460px;
@@ -372,7 +372,7 @@
                 <p class="contact-modal-title">say hello.</p>
                 <form id="contactForm" onsubmit="submitContact(event)">
                     <div class="contact-field">
-                        <label for="contact-name">Name</label>
+                        <label for="contact-name">Name <span style="color:var(--accent)">*</span></label>
                         <input type="text" id="contact-name" name="name" autocomplete="name" required>
                     </div>
                     <div class="contact-field">
@@ -380,7 +380,7 @@
                         <input type="email" id="contact-email" name="email" autocomplete="email">
                     </div>
                     <div class="contact-field">
-                        <label for="contact-msg">What do you wish to say</label>
+                        <label for="contact-msg">What do you wish to say <span style="color:var(--accent)">*</span></label>
                         <textarea id="contact-msg" name="message" rows="4" required></textarea>
                     </div>
                     <p class="contact-error" id="contactError">Something went wrong. Try again.</p>

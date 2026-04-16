@@ -289,8 +289,8 @@ html[data-theme="light"] .header.vadi-active {
 .btn-privacy {
     background: transparent;
     color: var(--text);
-    border: 1.5px solid var(--card-border-hover);
-    box-shadow: 2px 2px 0 var(--card-bg);
+    border: 1.5px solid var(--text);
+    box-shadow: 3px 3px 0 rgba(28, 15, 0, 0.25);
 }
 
 .btn-now:hover,
@@ -298,7 +298,7 @@ html[data-theme="light"] .header.vadi-active {
     background: var(--text);
     color: var(--bg);
     transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0 var(--card-border);
+    box-shadow: 4px 4px 0 rgba(28, 15, 0, 0.25);
 }
 
 /* ---- VADI EASTER EGG BTN ---- */

@@ -410,6 +410,20 @@ html[data-theme="light"] .header.vadi-active {
     border-radius: 3px;
     border: 1px solid var(--card-border);
     box-shadow: 5px 5px 0 rgba(28, 15, 0, 0.09);
+    overflow: hidden;
+}
+
+.video-item iframe {
+    transition: filter 0.4s ease;
+    filter: sepia(0.65) contrast(1.1) opacity(0.9);
+}
+
+html[data-theme="dark"] .video-item iframe {
+    filter: sepia(0.4) contrast(1.15) opacity(0.8) brightness(0.85);
+}
+
+.video-item:hover iframe {
+    filter: sepia(0) contrast(1) opacity(1) brightness(1);
 }
 
 /* ---- FOOTER ---- */

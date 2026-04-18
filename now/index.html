@@ -303,19 +303,14 @@
     <div class="now-section">
         <span class="now-label">Shooting</span>
         <div class="now-item">
-            <div class="now-item-title">Living Expenses in Gurgaon</div>
+            <div class="now-item-title">Living Expenses</div>
             <div class="now-item-sub">YouTube</div>
             <div class="now-item-note">sharing the monthly expenses of a corporate slave</div>
         </div>
     </div>
 
     <div class="now-section">
-        <div class="reading-toggle-header" onclick="toggleFascinated()">
-            <span class="now-label" style="margin-bottom:0;">
-                <span id="fascinated-label">Fascinated by</span>
-            </span>
-            <span class="reading-toggle-arrow" id="fascinated-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
+        <span class="now-label">Fascinated by</span>
 
         <div id="fascinated-current" class="reading-view">
             <blockquote class="fascinated-quote">
@@ -324,12 +319,6 @@
             <div class="now-item-note">going through one of those finance-bro moments</div>
         </div>
 
-        <div id="fascinated-last" style="display:none;" class="reading-view">
-            <blockquote class="fascinated-quote">
-                5th metatarsal fracture takes 6 weeks to heal??
-            </blockquote>
-            <div class="now-item-note">going through my first r/neverbrokeabone moment</div>
-        </div>
     </div>
 
     <p class="now-footer-note">
@@ -404,14 +393,6 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    let fascinatedShowingLast = false;
-    function toggleFascinated() {
-        fascinatedShowingLast = !fascinatedShowingLast;
-        document.getElementById('fascinated-current').style.display = fascinatedShowingLast ? 'none' : 'block';
-        document.getElementById('fascinated-last').style.display = fascinatedShowingLast ? 'block' : 'none';
-        document.getElementById('fascinated-label').textContent = fascinatedShowingLast ? 'Also by' : 'Fascinated by';
-        document.getElementById('fascinated-arrow').classList.toggle('flipped', fascinatedShowingLast);
-    }
 
     let readingShowingLast = false;
     function toggleReading() {

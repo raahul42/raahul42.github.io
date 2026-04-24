@@ -158,9 +158,10 @@
             .dns-card { grid-column: auto; }
         }
         @media (max-width: 700px) {
+            .tools-grid { grid-template-columns: 1fr; width: 92%; }
             .tool-card-wrap { height: auto; min-height: 160px; }
             .tool-card-wrap:has(.tool-card.expanded) { z-index: 20; }
-            .tool-card { position: relative; top: auto; left: auto; right: auto; }
+            .tool-card { position: relative; top: auto; left: auto; right: auto; min-height: auto; }
             .tool-card.expanded {
                 background: var(--bg);
                 border-color: var(--text);
@@ -168,11 +169,8 @@
                 transform: translate(-2px, -2px);
             }
             .tool-card.expanded .tool-icon { color: var(--accent) !important; }
-            .tool-card.expanded .tool-desc { max-height: 200px; opacity: 1; margin-top: 12px; }
+            .tool-card.expanded .tool-desc { max-height: 300px; opacity: 1; margin-top: 12px; }
             .tool-card.expanded .tool-link { max-height: 36px; opacity: 1; margin-top: 10px; }
-        }
-        @media (max-width: 560px) {
-            .tools-grid { grid-template-columns: 1fr; width: 92%; }
             .privacy-hero h1 { min-height: 2.5em; }
         }
         .ink-drop-privacy {

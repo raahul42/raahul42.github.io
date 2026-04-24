@@ -153,6 +153,9 @@
             opacity: 1;
             margin-top: 10px;
         }
+        .dns-card {
+            grid-column: 2;
+        }
         @media (max-width: 900px) {
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
             .dns-card { grid-column: auto; }
@@ -303,7 +306,7 @@
         </div>
 
         <!-- Row 3: DNS centered in middle column -->
-        <div class="tool-card-wrap reveal dns-card" style="--reveal-delay: 0.1s; grid-column: 2">
+        <div class="tool-card-wrap reveal dns-card" style="--reveal-delay: 0.1s;">
         <a href="https://quad9.net" target="_blank" rel="noopener noreferrer" class="tool-card">
             <i class="tool-icon fa-solid fa-circle-nodes" style="color: #38bdf8;"></i>
             <span class="tool-category">DNS</span>

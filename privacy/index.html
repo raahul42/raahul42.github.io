@@ -155,6 +155,7 @@
         }
         @media (max-width: 900px) {
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
+            .dns-card { grid-column: auto; }
         }
         @media (max-width: 700px) {
             .tool-card-wrap { height: auto; min-height: 160px; }
@@ -240,6 +241,7 @@
 <section class="tools-section">
     <div class="tools-grid">
 
+        <!-- Row 1: Browser, Email, 2FA -->
         <div class="tool-card-wrap reveal">
         <a href="https://brave.com" target="_blank" rel="noopener noreferrer" class="tool-card">
             <i class="tool-icon fa-solid fa-shield-halved" style="color: #FB542B;"></i>
@@ -251,12 +253,12 @@
         </div>
 
         <div class="tool-card-wrap reveal" style="--reveal-delay: 0.1s">
-        <a href="https://proton.me/pass" target="_blank" rel="noopener noreferrer" class="tool-card">
-            <i class="tool-icon fa-solid fa-key" style="color: #6D4AFF;"></i>
-            <span class="tool-category">Password Manager</span>
-            <h3 class="tool-name">Proton Pass</h3>
-            <p class="tool-desc">Open-source password manager from the Proton team. End-to-end encrypted, zero-knowledge, built in Switzerland under strong privacy laws.</p>
-            <span class="tool-link">proton.me/pass <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        <a href="https://duckduckgo.com/email/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <i class="tool-icon fa-solid fa-at" style="color: #DE5833;"></i>
+            <span class="tool-category">Email</span>
+            <h3 class="tool-name">DuckDuckGo<br>Email Protection</h3>
+            <p class="tool-desc">Free email forwarding service that strips trackers from every email before it hits your inbox.</p>
+            <span class="tool-link">duckduckgo.com/email <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
         </div>
 
@@ -270,17 +272,28 @@
         </a>
         </div>
 
+        <!-- Row 2: Mobile, Password Manager, Network -->
         <div class="tool-card-wrap reveal" style="--reveal-delay: 0.05s">
-        <a href="https://quad9.net" target="_blank" rel="noopener noreferrer" class="tool-card">
-            <i class="tool-icon fa-solid fa-circle-nodes" style="color: #38bdf8;"></i>
-            <span class="tool-category">DNS</span>
-            <h3 class="tool-name">Quad9</h3>
-            <p class="tool-desc">Free, privacy-focused DNS resolver (9.9.9.9) that blocks malicious domains at the DNS layer. Doesn't log your queries. Run by a Swiss non-profit, no commercial interest in your data.</p>
-            <span class="tool-link">quad9.net <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        <a href="https://spreadprivacy.com/introducing-app-tracking-protection/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <i class="tool-icon fa-solid fa-mobile" style="color: #8b5cf6;"></i>
+            <span class="tool-category">Mobile</span>
+            <h3 class="tool-name">Phone Privacy</h3>
+            <p class="tool-desc">On iPhone 14 - App Tracking Transparency on, location set to "never" for most apps, ad personalisation off. On Android - DuckDuckGo's VPN blocks app-level trackers across every app on the device.</p>
+            <span class="tool-link">DDG App Tracking Protection <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
         </div>
 
         <div class="tool-card-wrap reveal" style="--reveal-delay: 0.15s">
+        <a href="https://proton.me/pass" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <i class="tool-icon fa-solid fa-key" style="color: #6D4AFF;"></i>
+            <span class="tool-category">Password Manager</span>
+            <h3 class="tool-name">Proton Pass</h3>
+            <p class="tool-desc">Open-source password manager from the Proton team. End-to-end encrypted, zero-knowledge, built in Switzerland under strong privacy laws.</p>
+            <span class="tool-link">proton.me/pass <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        </a>
+        </div>
+
+        <div class="tool-card-wrap reveal" style="--reveal-delay: 0.25s">
         <a href="https://docs.pi-hole.net/" target="_blank" rel="noopener noreferrer" class="tool-card">
             <i class="tool-icon fa-solid fa-network-wired" style="color: #ef4444;"></i>
             <span class="tool-category">Network</span>
@@ -290,13 +303,14 @@
         </a>
         </div>
 
-        <div class="tool-card-wrap reveal" style="--reveal-delay: 0.25s">
-        <a href="https://spreadprivacy.com/introducing-app-tracking-protection/" target="_blank" rel="noopener noreferrer" class="tool-card">
-            <i class="tool-icon fa-solid fa-mobile" style="color: #8b5cf6;"></i>
-            <span class="tool-category">Mobile</span>
-            <h3 class="tool-name">Phone Privacy</h3>
-            <p class="tool-desc">On iPhone 14 - App Tracking Transparency on, location set to "never" for most apps, ad personalisation off. On Android - DuckDuckGo's VPN blocks app-level trackers across every app on the device.</p>
-            <span class="tool-link">DDG App Tracking Protection <i class="fa-solid fa-arrow-right fa-xs"></i></span>
+        <!-- Row 3: DNS centered in middle column -->
+        <div class="tool-card-wrap reveal dns-card" style="--reveal-delay: 0.1s; grid-column: 2">
+        <a href="https://quad9.net" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <i class="tool-icon fa-solid fa-circle-nodes" style="color: #38bdf8;"></i>
+            <span class="tool-category">DNS</span>
+            <h3 class="tool-name">Quad9</h3>
+            <p class="tool-desc">Free, privacy-focused DNS resolver (9.9.9.9) that blocks malicious domains at the DNS layer. Doesn't log your queries. Run by a Swiss non-profit, no commercial interest in your data.</p>
+            <span class="tool-link">quad9.net <i class="fa-solid fa-arrow-right fa-xs"></i></span>
         </a>
         </div>
 

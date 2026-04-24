@@ -61,11 +61,36 @@
             right: -10%;
             transform: rotate(-30deg);
         }
+        .finance-illustration {
+            max-width: 100%;
+            width: 500px;
+            height: auto;
+            margin-top: 40px;
+            opacity: 0.75;
+            transition: opacity 0.3s ease;
+        }
+        .finance-illustration:hover {
+            opacity: 1;
+        }
+        [data-theme='dark'] .finance-illustration {
+            filter: grayscale(100%) brightness(1.2) contrast(1.5) invert(1);
+            mix-blend-mode: screen;
+            opacity: 0.6;
+        }
+        [data-theme='light'] .finance-illustration {
+            filter: grayscale(100%) brightness(1.2) contrast(1.5);
+            mix-blend-mode: multiply;
+            opacity: 0.6;
+        }
         @media (max-width: 700px) {
             .ink-drop-finance {
                 top: 10%;
                 right: -20%;
                 opacity: 0.3;
+            }
+            .finance-illustration {
+                width: 100%;
+                margin-top: 30px;
             }
         }
     </style>
@@ -110,6 +135,7 @@
         <p>I recently developed an interest in personal finance, <a href="https://www.youtube.com/watch?v=i30jbbk7yoQ&list=PLUl4u3cNGP62KS2YhlASvGBxxL8HgB11p" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">public finance</a>, investing, and other finance bro topics.</p>
         <p>This page is for that. Still building it.</p>
         <span class="wip-note">— work in progress —</span>
+        <img src="../images/finance_construction.png" alt="Building wealth illustration" class="finance-illustration">
     </section>
 </main>
 
